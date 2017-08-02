@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_background"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_calendartime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="lala"
+        android:textSize="15sp" />
+
+    <include layout="@layout/view_top_week_title" />
+
+    <include layout="@layout/layout_line" />
+
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        app:mcv_dateTextAppearance="@style/text"
+        android:id="@+id/material_calendarview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mcv_calendarMode="month"
+        app:mcv_showOtherDates="all"
+
+
+        />
+</LinearLayout>
