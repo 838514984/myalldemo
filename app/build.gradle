@@ -28,20 +28,13 @@ repositories {
 
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
-    compile(name:'calendar-release-1.0', ext:'aar') //引用本地aar
-
-
-
-
-
-
-
-
+    compile(name: 'calendar-release-1.0', ext: 'aar')
+    //引用本地aar
+    compile project(':mylibrary')
     compile 'org.greenrobot:eventbus:3.0.0'
     compile 'com.github.bumptech.glide:glide:4.0.0-RC1'
     compile 'com.android.support:appcompat-v7:25.3.1'

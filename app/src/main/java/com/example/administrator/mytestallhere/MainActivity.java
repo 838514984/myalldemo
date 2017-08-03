@@ -17,6 +17,7 @@ import com.example.administrator.mytestallhere.rxJava.TestRxJavaActivity;
 import com.example.administrator.mytestallhere.rxbinding.RxBinDingActivity;
 import com.example.administrator.mytestallhere.selectImgAndCrop.SelectImgAndCropActivity;
 import com.example.administrator.mytestallhere.statusutil.StatusBarUtil;
+import com.example.administrator.mytestallhere.testDependences.DependencesActivity;
 import com.example.administrator.mytestallhere.testRelativeoutPaddingValueable.RelativeLayoutpadding30dp;
 import com.example.administrator.mytestallhere.testStatusBar.TestStatusBar;
 import com.example.administrator.mytestallhere.testmaterial_calendarview.MaterialCalendarViewActivity;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         add("TestSelectImg&crop");
         add("TestPicker(Time Number..)");
         add("TestMaterialCalendarView");
+        add("TestAddDependences");
     }};
 
     @Override
@@ -83,6 +85,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 break;
             case 8:
                 startActivity(new Intent(this, MaterialCalendarViewActivity.class));
+                break;
+            case 9:
+                startActivity(new Intent(this, DependencesActivity.class));
                 break;
 
         }

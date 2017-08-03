@@ -31,7 +31,8 @@
         <activity android:name=".selectImgAndCrop.SelectImgAndCropActivity" />
         <activity android:name=".selectImgAndCrop.PhotoActivity" />
         <activity android:name=".time_data_orotherpicker.TestPickActivity" />
-        <activity android:name=".testmaterial_calendarview.MaterialCalendarViewActivity"></activity>
+        <activity android:name=".testmaterial_calendarview.MaterialCalendarViewActivity" />
+        <activity android:name=".testDependences.DependencesActivity"></activity>
     </application>
 
 </manifest>
