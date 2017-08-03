@@ -1,5 +1,6 @@
 package com.example.administrator.mytestallhere.testmaterial_calendarview;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -28,20 +29,23 @@ public class MaterialCalendarViewActivity extends AppCompatActivity implements O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_material_calendar_view);
         ButterKnife.bind(this);
-        dialog = new MyCalendarDialog(this, new DialogInterface.OnClickListener() {
+        dialog = new MyCalendarDialog(this);
+        dialog.setOnDateChangedListener(this);
+        dialog.setOnMyMonthChangedListener(this);
+
+        dialog.setPositiveBtnListener(new MyCalendarDialog.PositiveBtnListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        }, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
+            public void onClick(Dialog dialog) {
                 dialog.dismiss();
             }
         });
 
-        dialog.setOnDateChangedListener(this);
-        dialog.setOnMyMonthChangedListener(this);
+        dialog.setNegativeListener(new MyCalendarDialog.NegativeListener() {
+            @Override
+            public void onClick(Dialog dialog) {
+                dialog.dismiss();
+            }
+        });
 
 
     }

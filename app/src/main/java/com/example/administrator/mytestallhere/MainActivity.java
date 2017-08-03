@@ -16,6 +16,7 @@ import com.example.administrator.mytestallhere.cameraTest.CameraPreViewTestActiv
 import com.example.administrator.mytestallhere.rxJava.TestRxJavaActivity;
 import com.example.administrator.mytestallhere.rxbinding.RxBinDingActivity;
 import com.example.administrator.mytestallhere.selectImgAndCrop.SelectImgAndCropActivity;
+import com.example.administrator.mytestallhere.statusutil.StatusBarUtil;
 import com.example.administrator.mytestallhere.testRelativeoutPaddingValueable.RelativeLayoutpadding30dp;
 import com.example.administrator.mytestallhere.testStatusBar.TestStatusBar;
 import com.example.administrator.mytestallhere.testmaterial_calendarview.MaterialCalendarViewActivity;
@@ -43,10 +44,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         lv = (ListView) findViewById(R.id.lv);
         adapter = new MyAdapter();
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(this);
+
+        StatusBarUtil.immersive(this);
+        StatusBarUtil.setPaddingSmart(this,lv);
     }
 
     @Override
