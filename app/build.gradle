@@ -55,4 +55,5 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.7.0'
     compile project(':mylibrary')
+
 }

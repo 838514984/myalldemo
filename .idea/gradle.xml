@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/mylibrary" />
             <option value="$PROJECT_DIR$/mysublib" />
+            <option value="$PROJECT_DIR$/mythirdlib" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
