@@ -1,4 +1,4 @@
-package com.example.administrator.mytestallhere;
+package com.example.mysublib;
 
 import org.junit.Test;
 

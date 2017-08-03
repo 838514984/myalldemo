@@ -17,11 +17,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+
 }
 
 repositories {
     flatDir {
-        dirs 'libs' // aar目录
+        dirs 'libs' ,'../mylibrary/libs'// aar目录
     }
 }
 
@@ -32,9 +34,12 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+
+    compile(name: 'ultra_lib-1.0.11', ext: 'aar')
+    //arr依赖不传递
+    //arr依赖不传递
     compile(name: 'calendar-release-1.0', ext: 'aar')
     //引用本地aar
-    compile project(':mylibrary')
     compile 'org.greenrobot:eventbus:3.0.0'
     compile 'com.github.bumptech.glide:glide:4.0.0-RC1'
     compile 'com.android.support:appcompat-v7:25.3.1'
@@ -49,4 +54,5 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.7.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.7.0'
+    compile project(':mylibrary')
 }
