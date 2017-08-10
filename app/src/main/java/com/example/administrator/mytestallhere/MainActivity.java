@@ -1,6 +1,10 @@
 package com.example.administrator.mytestallhere;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -11,8 +15,12 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.example.administrator.mytestallhere.butterknife.ButterKnifeActivity;
 import com.example.administrator.mytestallhere.cameraTest.CameraPreViewTestActivity;
+import com.example.administrator.mytestallhere.glideGetBitmap.GlideGetBitmapActivity;
 import com.example.administrator.mytestallhere.rxJava.TestRxJavaActivity;
 import com.example.administrator.mytestallhere.rxbinding.RxBinDingActivity;
 import com.example.administrator.mytestallhere.selectImgAndCrop.SelectImgAndCropActivity;
@@ -40,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         add("TestPicker(Time Number..)");
         add("TestMaterialCalendarView");
         add("TestAddDependences");
+        add("TestGlideGetBitmap");
     }};
 
     @Override
@@ -54,6 +63,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         StatusBarUtil.immersive(this);
         StatusBarUtil.setPaddingSmart(this,lv);
+
+
     }
 
     @Override
@@ -88,6 +99,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 break;
             case 9:
                 startActivity(new Intent(this, DependencesActivity.class));
+                break;
+            case 10:
+                startActivity(new Intent(this, GlideGetBitmapActivity.class));
                 break;
         }
     }

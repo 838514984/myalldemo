@@ -1,1 +1,10 @@
 include ':app', ':mylibrary', ':mysublib', ':mythirdlib'
+
+println 'Home Die: '+gradle.gradleHomeDir
+println 'UserHomeDir: '+gradle.gradleUserHomeDir
+
+def toDoSomething(){
+    println 'hello this is the other thing'
+}
+
+toDoSomething()

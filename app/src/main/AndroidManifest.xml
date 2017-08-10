@@ -15,8 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:replace="android:icon"
-        >
+        tools:replace="android:icon">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,7 +34,8 @@
         <activity android:name=".selectImgAndCrop.PhotoActivity" />
         <activity android:name=".time_data_orotherpicker.TestPickActivity" />
         <activity android:name=".testmaterial_calendarview.MaterialCalendarViewActivity" />
-        <activity android:name=".testDependences.DependencesActivity"></activity>
+        <activity android:name=".testDependences.DependencesActivity" />
+        <activity android:name=".glideGetBitmap.GlideGetBitmapActivity"></activity>
     </application>
 
 </manifest>
