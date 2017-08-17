@@ -21,6 +21,7 @@ import com.bumptech.glide.request.transition.Transition;
 import com.example.administrator.mytestallhere.butterknife.ButterKnifeActivity;
 import com.example.administrator.mytestallhere.cameraTest.CameraPreViewTestActivity;
 import com.example.administrator.mytestallhere.glideGetBitmap.GlideGetBitmapActivity;
+import com.example.administrator.mytestallhere.multiApksBuildTest.MuiltyApksbuildTestActivity;
 import com.example.administrator.mytestallhere.rxJava.TestRxJavaActivity;
 import com.example.administrator.mytestallhere.rxbinding.RxBinDingActivity;
 import com.example.administrator.mytestallhere.selectImgAndCrop.SelectImgAndCropActivity;
@@ -38,17 +39,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     ListView lv;
     BaseAdapter adapter;
     List<String> mDatas = new ArrayList<String>() {{
-        add("TestRelativeLayoutPadding");
-        add("TestStatusBar");
-        add("TestRxBinding");
-        add("TestRxJava");
-        add("TestButtferKnife");
-        add("TestCamera SurfaceView");
-        add("TestSelectImg&crop");
-        add("TestPicker(Time Number..)");
-        add("TestMaterialCalendarView");
-        add("TestAddDependences");
-        add("TestGlideGetBitmap");
+        add("RelativeLayoutPaddingTest");
+        add("StatusBarTest");
+        add("RxBindingTest");
+        add("RxJavaTest");
+        add("ButtferKnifeTest");
+        add("Camera SurfaceViewTest");
+        add("SelectImg&cropTest");
+        add("Picker(Time Number..)Test");
+        add("MaterialCalendarViewTest");
+        add("AddDependencesTest");
+        add("GlideGetBitmapTest");
+        add("MultiApksTest");
     }};
 
     @Override
@@ -102,6 +104,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 break;
             case 10:
                 startActivity(new Intent(this, GlideGetBitmapActivity.class));
+                break;
+            case 11:
+                startActivity(new Intent(this, MuiltyApksbuildTestActivity.class));
                 break;
         }
     }

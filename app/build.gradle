@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'maven'
-apply from:rootProject.getRootDir().getAbsolutePath()+'/myUtil.gradle'
+apply from: rootProject.getRootDir().getAbsolutePath() + '/myUtil.gradle'
 getAndroidVersion()
 println utilName
 
@@ -26,15 +26,33 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             manifestPlaceholders = [testM: "release"]
         }
-        debug{
+        debug {
             manifestPlaceholders = [testM: "debug"]
         }
+//        myBuildType {
+//
+//        }
     }
+    // config  variant features
+    productFlavors {
+        //这一个为什么不能成功？
+        myray {
+            applicationId 'mybase.com.example.administrator.mytestallhere'
+        }
+        treasure {
+            applicationId 'treasure.com.example.administrator.mytestallhere'
+        }
+    }
+
+//    splits {
+//
+//    }
 
 
 }
 
 repositories {
+    //本地仓库
     flatDir {
         dirs 'libs', '../mylibrary/libs'// aar目录
     }
@@ -69,32 +87,32 @@ dependencies {
     compile project(':mylibrary')
     //butterknife 在子工程里依赖比较麻烦
     compile 'com.jakewharton:butterknife:8.8.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.0'
 }
 
 
-class MyClass{
+class MyClass {
     String myname
 
-    void setName(s){
-        myname=s
+    void setName(s) {
+        myname = s
     }
 
-    void setClosure(Closure closure){
+    void setClosure(Closure closure) {
         closure(myname)
     }
-    void setname(s){
-        myname=s
-    }
 
+    void setname(s) {
+        myname = s
+    }
 
 
 }
 
-task testMyClass{
-    def mClass=new MyClass()
-    doLast{
+task testMyClass {
+    def mClass = new MyClass()
+    doLast {
         mClass.myName 'hh'
         println mClass.myname
     }
@@ -107,24 +125,24 @@ uploadArchives {
     }
 }
 
-sourceSets.all{
-    ext.purpose=null
-    println 'sourceSets :    '+it.name
+sourceSets.all {
+    ext.purpose = null
+    println 'sourceSets :    ' + it.name
 }
 
-sourceSets{
-    main{
-        purpose='main'
+sourceSets {
+    main {
+        purpose = 'main'
     }
-    test{
-        purpose='test'
+    test {
+        purpose = 'test'
     }
-    belove{
-        purpose='belove'
+    belove {
+        purpose = 'belove'
     }
 }
 
-task testSourceSets<<{
-    sourceSets.matching{it.purpose=='belove'}.each {println '--'+it.name}
+task testSourceSets << {
+    sourceSets.matching { it.purpose == 'belove' }.each { println '--' + it.name }
     configure()
 }
