@@ -1,0 +1,17 @@
+
+def getAndroidVersion(){
+    def manifests=project.file("/src/main/AndroidManifest.xml")
+    def version=new XmlSlurper().parse(manifests)['@android:versionName']
+    println '-------------the application version is : '+version
+    version
+}
+
+
+ext{
+    getAndroidVersion=this.&getAndroidVersion
+}
+/*
+    is the same as the follow
+    ext.getAndroidVersion=this.&getAndroidVersion
+ */
+ext.utilName='--------------this is the utilName'

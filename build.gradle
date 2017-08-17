@@ -3,6 +3,10 @@
 buildscript {
     repositories {
         jcenter()
+        mavenCentral()
+        maven{
+            url "http://repo.mycompany.com/maven2"
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.0'
@@ -12,11 +16,22 @@ buildscript {
     }
 }
 
+task myTask<<{
+    println 'this is the task in the app moudle'
+}
 
 allprojects {
+
+    println '-----------all projects: '+project.name
+
     repositories {
         jcenter()
     }
+
+}
+
+subprojects{
+    println '------------- sub projects: '+project.name
 }
 
 task clean(type: Delete) {

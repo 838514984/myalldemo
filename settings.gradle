@@ -4,7 +4,11 @@ println 'Home Die: '+gradle.gradleHomeDir
 println 'UserHomeDir: '+gradle.gradleUserHomeDir
 
 def toDoSomething(){
-    println 'hello this is the other thing'
+    println 'hello,it is doing an another thing'
 }
 
 toDoSomething()
+println '-------------------gradle.gradle: '+gradle.gradle
+
+
+
