@@ -33,13 +33,18 @@ android {
 //
 //        }
     }
+
+
+   // flavorDimensions 'first','seconed'
+
     // config  variant features
     productFlavors {
-        //这一个为什么不能成功？
         myray {
+            //dimension 'seconed'
             applicationId 'mybase.com.example.administrator.mytestallhere'
         }
         treasure {
+           // dimension 'first'
             applicationId 'treasure.com.example.administrator.mytestallhere'
         }
     }
@@ -48,7 +53,19 @@ android {
 //
 //    }
 
+    variantFilter{
 
+    }
+
+    sourceSets{
+        //maybe only the 'main' script block is workful
+//        myrayDebug{
+//            java.srcDirs=['main/java','mybase/java']
+//        }
+        main{
+            java.srcDirs=['src/main/java','src/mybase/java']//!!!!! not like follows : main/java....mybase/java.....
+        }
+    }
 }
 
 repositories {
@@ -84,11 +101,15 @@ dependencies {
 //    compile 'com.jakewharton.rxbinding2:rxbinding-leanback-v17:2.0.0'
 //    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
 //    annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC1'
-    compile project(':mylibrary')
+
     //butterknife 在子工程里依赖比较麻烦
+    //myrayCompile 'com.jakewharton:butterknife:8.8.0'      //注意这里是只有选择myray的productFlavor才会用这个依赖
     compile 'com.jakewharton:butterknife:8.8.0'
+    //treasureCompile project(':mylibrary')                   //这里也是
+    compile project(':mylibrary')
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.0'
+
 }
 
 
