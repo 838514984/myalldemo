@@ -57,7 +57,7 @@ android {
 
         }
     }
-    //according to the density or abi to create muity apks
+    //according to the density or abi to cer
     splits {
         density{
           enable false
