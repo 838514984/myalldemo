@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'maven'
 apply from: rootProject.getRootDir().getAbsolutePath() + '/myUtil.gradle'
+apply plugin: 'com.getkeepsafe.dexcount'
 getAndroidVersion()
 println utilName
 
@@ -19,19 +20,24 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
+        multiDexEnabled true
+
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            manifestPlaceholders = [testM: "release"]
+            manifestPlaceholders = [CHANNEL: "release"]
         }
         debug {
-            manifestPlaceholders = [testM: "debug"]
+
+            applicationIdSuffix '.ddddbug'
         }
-//        myBuildType {
-//
-//        }
+
+        myBuildType {
+            initWith(debug)
+            applicationIdSuffix '.myBuildType'
+        }
     }
 
 
@@ -42,16 +48,24 @@ android {
         myray {
             //dimension 'seconed'
             applicationId 'mybase.com.example.administrator.mytestallhere'
+            manifestPlaceholders = [CHANNEL: "myray"]
         }
         treasure {
            // dimension 'first'
             applicationId 'treasure.com.example.administrator.mytestallhere'
+            manifestPlaceholders =[CHANNEL:'treasure']
+
         }
     }
+    //according to the density or abi to create muity apks
+    splits {
+        density{
+          enable false
+        }
+        abi{
 
-//    splits {
-//
-//    }
+        }
+    }
 
     variantFilter{
 
@@ -62,9 +76,22 @@ android {
 //        myrayDebug{
 //            java.srcDirs=['main/java','mybase/java']
 //        }
-        main{
+        myray{
             java.srcDirs=['src/main/java','src/mybase/java']//!!!!! not like follows : main/java....mybase/java.....
         }
+        treasure{
+            java.srcDirs=['src/main/java','src/treasure/java']//!!!!! not like follows : main/java....mybase/java.....
+        }
+    }
+
+    dexOptions{
+        preDexLibraries false
+        maxProcessCount 8
+        javaMaxHeapSize '4g'
+    }
+    //set png cruncherEnable ,disable it can reduce the gradle build time
+    aaptOptions {
+        cruncherEnabled false
     }
 }
 
@@ -109,6 +136,7 @@ dependencies {
     compile project(':mylibrary')
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.0'
+
 
 }
 

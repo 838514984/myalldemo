@@ -8,7 +8,11 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-
+    <!--解决冲突，注意这里minsdk是19版本，而mylibrary是20，如果不处理的话会报错-->
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="25"
+        tools:overrideLibrary="com.example.mylibrary" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -37,7 +41,7 @@
         <activity android:name=".testDependences.DependencesActivity" />
         <activity android:name=".glideGetBitmap.GlideGetBitmapActivity">
             <intent-filter>
-                <action android:name="${testM}" />
+                <action android:name="${CHANNEL}" />
             </intent-filter>
         </activity>
         <activity android:name=".multiApksBuildTest.MuiltyApksbuildTestActivity"></activity>
