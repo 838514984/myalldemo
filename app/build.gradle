@@ -38,14 +38,21 @@ android {
         multiDexEnabled true
 
     }
+    signingConfigs {
+        release {
+            storeFile file("../key/lnKey.jks")
+            keyAlias "key0"
+            keyPassword "2332apple"
+            storePassword "2332apple"
+        }
+    }
     buildTypes {
         release {
-            initWith(debug)
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             buildConfigField("String","MyBuild","\"release buildConfigFields\"")
             resValue("string","buildTime","0")
-
+            signingConfig signingConfigs.release
         }
         debug {
             applicationIdSuffix '.ddddbug'
@@ -61,14 +68,7 @@ android {
         }
 
     }
-    signingConfigs {
-        release {
-            storeFile file("../key/lnKey.jks")
-            keyAlias "key0"
-            keyPassword "2332apple"
-            storePassword "2332apple"
-        }
-    }
+
     // flavorDimensions 'first','seconed'
     // config  variant features
     productFlavors {
