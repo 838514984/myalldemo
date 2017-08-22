@@ -2,26 +2,23 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.administrator.mytestallhere"
-    android:versionName="2.0">
+    android:versionName="2.0"> <!-- 解决冲突，注意这里minsdk是19版本，而mylibrary是20，如果不处理的话会报错 -->
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="25"
+        tools:overrideLibrary="com.example.mylibrary" />
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <!--解决冲突，注意这里minsdk是19版本，而mylibrary是20，如果不处理的话会报错-->
-    <uses-sdk
-        android:minSdkVersion="19"
-        android:targetSdkVersion="25"
-        tools:overrideLibrary="com.example.mylibrary" />
-    <!--注意这里有一个android:icon:"xxxx" 省略，然后下面用了融合节点node，这就表示用了低优先级的manifest中的icon，具体的merg 详情点击左下角的merg manifest-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 注意这里有一个android:icon:"xxxx" 省略，然后下面用了融合节点node，这就表示用了低优先级的manifest中的icon，具体的merg 详情点击左下角的merg manifest -->
     <application
         android:allowBackup="true"
-
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:node="merge"
-        >
+        tools:node="merge">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,12 +38,14 @@
         <activity android:name=".time_data_orotherpicker.TestPickActivity" />
         <activity android:name=".testmaterial_calendarview.MaterialCalendarViewActivity" />
         <activity android:name=".testDependences.DependencesActivity" />
+        <!-- applicationId　是默认的placeHolder -->
         <activity android:name=".glideGetBitmap.GlideGetBitmapActivity">
             <intent-filter>
-                <action android:name="${CHANNEL}" />
+                <action android:name="${CHANNEL}.${applicationId}" />
             </intent-filter>
         </activity>
-        <activity android:name=".multiApksBuildTest.MuiltyApksbuildTestActivity"></activity>
+        <activity android:name=".multiApksBuildTest.MuiltyApksbuildTestActivity" />
+        <activity android:name=".buildConfigTest.BuildConfigActivity"></activity>
     </application>
 
 </manifest>

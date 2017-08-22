@@ -5,17 +5,32 @@ apply plugin: 'com.getkeepsafe.dexcount'
 getAndroidVersion()
 println utilName
 
+
+ext {
+    compileSdkVersion = 25
+    minSdkVersion = 19
+    targetSdkVersion = 25
+}
+
+
 afterEvaluate {
     println '******************* this is the msg from afterEvaluate'
 }
 android {
-    compileSdkVersion 25
+    signingConfigs {
+        config {
+            keyPassword '2332apple'
+            storeFile file('D:/key/lnKey.jks')
+            storePassword '2332apple'
+        }
+    }
+    compileSdkVersion project.ext.compileSdkVersion
     buildToolsVersion "25.0.3"
     defaultConfig {
         applicationId "com.example.administrator.mytestallhere"
 
-        minSdkVersion 19
-        targetSdkVersion 25
+        minSdkVersion project.ext.minSdkVersion
+        targetSdkVersion project.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -25,24 +40,35 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled true
+            initWith(debug)
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            manifestPlaceholders = [CHANNEL: "release"]
+            buildConfigField("String","MyBuild","\"release buildConfigFields\"")
+            resValue("string","buildTime","0")
         }
         debug {
-
             applicationIdSuffix '.ddddbug'
+            buildConfigField("String","MyBuild","\"debug buildConfigFields\"")
+            resValue("string","buildTime","1")
         }
 
         myBuildType {
             initWith(debug)
             applicationIdSuffix '.myBuildType'
+            buildConfigField("String","MyBuild","\"myBuildType buildConfigFields\"")
+            resValue("string","buildTime","2")
+        }
+
+    }
+    signingConfigs {
+        release {
+            storeFile file("../key/lnKey.jks")
+            keyAlias "key0"
+            keyPassword "2332apple"
+            storePassword "2332apple"
         }
     }
-
-
-   // flavorDimensions 'first','seconed'
-
+    // flavorDimensions 'first','seconed'
     // config  variant features
     productFlavors {
         myray {
@@ -51,40 +77,39 @@ android {
             manifestPlaceholders = [CHANNEL: "myray"]
         }
         treasure {
-           // dimension 'first'
+            // dimension 'first'
             applicationId 'treasure.com.example.administrator.mytestallhere'
-            manifestPlaceholders =[CHANNEL:'treasure']
+            manifestPlaceholders = [CHANNEL: 'treasure']
 
         }
     }
     //according to the density or abi to cer
     splits {
-        density{
-          enable false
+        density {
+            enable false
         }
-        abi{
+        abi {
 
         }
     }
-
-    variantFilter{
+    variantFilter {
 
     }
-
-    sourceSets{
+    sourceSets {
         //maybe only the 'main' script block is workful
 //        myrayDebug{
 //            java.srcDirs=['main/java','mybase/java']
 //        }
-        myray{
-            java.srcDirs=['src/main/java','src/mybase/java']//!!!!! not like follows : main/java....mybase/java.....
+        myray {
+            java.srcDirs = ['src/main/java', 'src/mybase/java']
+//!!!!! not like follows : main/java....mybase/java.....
         }
-        treasure{
-            java.srcDirs=['src/main/java','src/treasure/java']//!!!!! not like follows : main/java....mybase/java.....
+        treasure {
+            java.srcDirs = ['src/main/java', 'src/treasure/java']
+//!!!!! not like follows : main/java....mybase/java.....
         }
     }
-
-    dexOptions{
+    dexOptions {
         preDexLibraries false
         maxProcessCount 8
         javaMaxHeapSize '4g'
@@ -94,6 +119,14 @@ android {
         cruncherEnabled false
     }
 }
+
+
+configurations {
+    freeDebug {
+
+    }
+}
+
 
 repositories {
     //本地仓库
@@ -105,39 +138,34 @@ repositories {
 
 
 dependencies {
-
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
     compile(name: 'ultra_lib-1.0.11', ext: 'aar')
     //arr依赖不传递
     //arr依赖不传递
     compile(name: 'calendar-release-1.0', ext: 'aar')
     //引用本地aar
-//    compile 'org.greenrobot:eventbus:3.0.0'
-//    compile 'com.github.bumptech.glide:glide:4.0.0-RC1'
-//    compile 'com.android.support:appcompat-v7:25.3.1'
-//    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-//    compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
-//    compile 'com.jakewharton.rxbinding2:rxbinding-support-v4:2.0.0'
-//    compile 'com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.0.0'
-//    compile 'com.jakewharton.rxbinding2:rxbinding-design:2.0.0'
-//    compile 'com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:2.0.0'
-//    compile 'com.jakewharton.rxbinding2:rxbinding-leanback-v17:2.0.0'
-//    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
-//    annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC1'
-
+    //    compile 'org.greenrobot:eventbus:3.0.0'
+    //    compile 'com.github.bumptech.glide:glide:4.0.0-RC1'
+    //    compile 'com.android.support:appcompat-v7:25.3.1'
+    //    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    //    compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+    //    compile 'com.jakewharton.rxbinding2:rxbinding-support-v4:2.0.0'
+    //    compile 'com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.0.0'
+    //    compile 'com.jakewharton.rxbinding2:rxbinding-design:2.0.0'
+    //    compile 'com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:2.0.0'
+    //    compile 'com.jakewharton.rxbinding2:rxbinding-leanback-v17:2.0.0'
+    //    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
+    //    annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC1'
     //butterknife 在子工程里依赖比较麻烦
     //myrayCompile 'com.jakewharton:butterknife:8.8.0'      //注意这里是只有选择myray的productFlavor才会用这个依赖
-    compile 'com.jakewharton:butterknife:8.8.0'
     //treasureCompile project(':mylibrary')                   //这里也是
     compile project(':mylibrary')
+    compile 'com.jakewharton:butterknife:8.8.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.0'
-
-
 }
 
 

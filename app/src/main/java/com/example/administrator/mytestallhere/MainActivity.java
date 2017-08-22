@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
+import com.example.administrator.mytestallhere.buildConfigTest.BuildConfigActivity;
 import com.example.administrator.mytestallhere.butterknife.ButterKnifeActivity;
 import com.example.administrator.mytestallhere.cameraTest.CameraPreViewTestActivity;
 import com.example.administrator.mytestallhere.glideGetBitmap.GlideGetBitmapActivity;
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         add("AddDependencesTest");
         add("GlideGetBitmapTest");
         add("MultiApksTest");
+        add("BuildConfigAdditionTest");
     }};
 
     @Override
@@ -107,6 +109,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 break;
             case 11:
                 startActivity(new Intent(this, MuiltyApksbuildTestActivity.class));
+                break;
+            case 12:
+                startActivity(new Intent(this, BuildConfigActivity.class));
                 break;
         }
     }
