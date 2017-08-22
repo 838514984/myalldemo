@@ -45,6 +45,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             buildConfigField("String","MyBuild","\"release buildConfigFields\"")
             resValue("string","buildTime","0")
+
         }
         debug {
             applicationIdSuffix '.ddddbug'
@@ -109,10 +110,16 @@ android {
 //!!!!! not like follows : main/java....mybase/java.....
         }
     }
+    //Use the following properties to improve the build times when Gradle compiles your code into DEX files.
     dexOptions {
-        preDexLibraries false
+        // Sets the maximum number of DEX processes
+        // that can be started concurrently.
         maxProcessCount 8
-        javaMaxHeapSize '4g'
+        // Sets the maximum memory allocation pool size
+        // for the dex operation.
+        javaMaxHeapSize "2g"
+        // Enables Gradle to pre-dex library dependencies.
+        preDexLibraries true
     }
     //set png cruncherEnable ,disable it can reduce the gradle build time
     aaptOptions {
