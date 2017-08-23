@@ -43,6 +43,6 @@ public class DependencesActivity extends AppCompatActivity {
     }
     @OnClick(R.id.btn_third)
     public void jumptothirdAct(){
-        //startActivity(new Intent(this,ThirdLibMainActivity.class));
+
     }
 }
