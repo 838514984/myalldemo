@@ -14,6 +14,7 @@ import android.widget.NumberPicker;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.administrator.mytestallhere.BaseActivity;
 import com.example.administrator.mytestallhere.R;
 
 import java.util.Calendar;
@@ -23,7 +24,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class TestPickActivity extends AppCompatActivity {
+public class TestPickActivity extends BaseActivity {
     @BindView(R.id.np)
     NumberPicker numberPicker;
     @BindView(R.id.dp)

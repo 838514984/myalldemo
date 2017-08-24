@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.administrator.mytestallhere.BaseActivity;
 import com.example.administrator.mytestallhere.R;
 import com.jakewharton.rxbinding2.view.RxView;
 import com.jakewharton.rxbinding2.widget.RxAdapter;
@@ -27,7 +28,7 @@ import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 
-public class RxBinDingActivity extends AppCompatActivity {
+public class RxBinDingActivity extends BaseActivity {
 
     Button btnClickMe;
     EditText editText1;

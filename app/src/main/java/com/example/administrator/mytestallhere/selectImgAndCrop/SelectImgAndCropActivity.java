@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.example.administrator.mytestallhere.BaseActivity;
 import com.example.administrator.mytestallhere.R;
 import com.jakewharton.rxbinding2.widget.RxTextView;
 import com.tbruyelle.rxpermissions2.RxPermissions;
@@ -23,7 +24,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.reactivex.functions.Consumer;
 
-public class SelectImgAndCropActivity extends AppCompatActivity {
+public class SelectImgAndCropActivity extends BaseActivity {
     @BindView(R.id.btn)
     Button button;
     @BindView(R.id.img)

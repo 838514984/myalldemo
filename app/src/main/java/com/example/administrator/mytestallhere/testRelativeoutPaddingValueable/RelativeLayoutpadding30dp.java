@@ -5,9 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.administrator.mytestallhere.BaseActivity;
 import com.example.administrator.mytestallhere.R;
 
-public class RelativeLayoutpadding30dp extends AppCompatActivity {
+public class RelativeLayoutpadding30dp extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

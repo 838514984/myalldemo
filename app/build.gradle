@@ -50,27 +50,27 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            buildConfigField("String","MyBuild","\"release buildConfigFields\"")
-            resValue "string","buildTime","0"
-            resValue "string","app_name","TestAllRelease"
+            buildConfigField("String", "MyBuild", "\"release buildConfigFields\"")
+            resValue "string", "buildTime", "0"
+            resValue "string", "app_name", "TestAllRelease"
             signingConfig signingConfigs.release
         }
         debug {
             minifyEnabled false
 
             applicationIdSuffix '.ddddbug'
-            buildConfigField "String","MyBuild","\"debug buildConfigFields\""
-            resValue "string","buildTime","1"
-            resValue "string","app_name","TestAlldebug"
+            buildConfigField "String", "MyBuild", "\"debug buildConfigFields\""
+            resValue "string", "buildTime", "1"
+            resValue "string", "app_name", "TestAlldebug"
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 
         myBuildType {
             initWith(debug)
             applicationIdSuffix '.myBuildType'
-            buildConfigField("String","MyBuild","\"myBuildType buildConfigFields\"")
-            resValue "string","app_name","TestAllmyBuildType"
-            resValue("string","buildTime","2")
+            buildConfigField("String", "MyBuild", "\"myBuildType buildConfigFields\"")
+            resValue "string", "app_name", "TestAllmyBuildType"
+            resValue "string", "buildTime", "2"
         }
 
     }
@@ -177,6 +177,7 @@ dependencies {
     //treasureCompile project(':mylibrary')                   //这里也是
     compile project(':mylibrary')
     compile 'com.jakewharton:butterknife:8.8.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.0'
 }
 

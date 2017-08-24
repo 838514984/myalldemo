@@ -32,11 +32,12 @@ import com.example.administrator.mytestallhere.testRelativeoutPaddingValueable.R
 import com.example.administrator.mytestallhere.testStatusBar.TestStatusBar;
 import com.example.administrator.mytestallhere.testmaterial_calendarview.MaterialCalendarViewActivity;
 import com.example.administrator.mytestallhere.time_data_orotherpicker.TestPickActivity;
+import com.example.administrator.mytestallhere.viewpagerTest.ViewPagerActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class MainActivity extends BaseActivity implements AdapterView.OnItemClickListener {
     ListView lv;
     BaseAdapter adapter;
     List<String> mDatas = new ArrayList<String>() {{
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         add("GlideGetBitmapTest");
         add("MultiApksTest");
         add("BuildConfigAdditionTest");
+        add("ViewpagerTest");
     }};
 
     @Override
@@ -64,8 +66,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         adapter = new MyAdapter();
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(this);
-
-        StatusBarUtil.immersive(this);
         StatusBarUtil.setPaddingSmart(this,lv);
 
     }
@@ -112,6 +112,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             case 12:
                 startActivity(new Intent(this, BuildConfigActivity.class));
                 break;
+            case 13:
+                startActivity(new Intent(this, ViewPagerActivity.class));
         }
     }
 

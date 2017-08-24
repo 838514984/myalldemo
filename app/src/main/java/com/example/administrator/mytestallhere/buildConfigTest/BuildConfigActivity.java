@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.administrator.mytestallhere.BaseActivity;
 import com.example.administrator.mytestallhere.BuildConfig;
 import com.example.administrator.mytestallhere.R;
 
@@ -11,7 +12,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class BuildConfigActivity extends AppCompatActivity {
+public class BuildConfigActivity extends BaseActivity{
     @BindView(R.id.tv_1)
     TextView tv_1;
     @BindView(R.id.tv_2)

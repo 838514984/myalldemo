@@ -1,4 +1,4 @@
-package com.example.administrator.mytestallhere.testRelativeoutPaddingValueable;
+package com.example.administrator.mytestallhere.TransitionsTest.activityTransitionTest;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,11 +6,11 @@ import android.os.Bundle;
 import com.example.administrator.mytestallhere.BaseActivity;
 import com.example.administrator.mytestallhere.R;
 
-public class FrameLayoutContainerpadding30dp extends BaseActivity {
+public class ActivityBBB extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_frame_layout_container);
+        setContentView(R.layout.activity_bbb);
     }
 }

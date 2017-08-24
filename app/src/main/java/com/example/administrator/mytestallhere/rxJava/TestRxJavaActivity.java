@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.administrator.mytestallhere.BaseActivity;
 import com.example.administrator.mytestallhere.R;
 
 import org.reactivestreams.Subscriber;
@@ -24,7 +25,7 @@ import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 
-public class TestRxJavaActivity extends AppCompatActivity {
+public class TestRxJavaActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,7 +96,8 @@ public class TestRxJavaActivity extends AppCompatActivity {
                 .map(new Function<Long, Long>() {
                     @Override
                     public Long apply(Long aLong) throws Exception {
-                        return 30 - aLong;
+                        //return 30 - aLong;
+                        return aLong;
                     }
                 })
                 .doOnNext(new Consumer<Long>() {

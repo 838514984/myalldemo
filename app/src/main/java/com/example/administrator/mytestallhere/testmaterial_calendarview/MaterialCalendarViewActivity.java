@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.administrator.mytestallhere.BaseActivity;
 import com.example.administrator.mytestallhere.R;
 import com.example.administrator.mytestallhere.util.Logger;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
@@ -19,7 +20,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MaterialCalendarViewActivity extends AppCompatActivity implements OnDateSelectedListener, MyCalendarDialog.MyMonthChangeListener {
+public class MaterialCalendarViewActivity extends BaseActivity implements OnDateSelectedListener, MyCalendarDialog.MyMonthChangeListener {
     @BindView(R.id.btn)
     Button btn;
     MyCalendarDialog dialog;

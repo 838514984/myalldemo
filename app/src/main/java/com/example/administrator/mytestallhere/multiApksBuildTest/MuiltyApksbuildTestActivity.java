@@ -4,12 +4,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.administrator.mytestallhere.BaseActivity;
 import com.example.administrator.mytestallhere.BuildConfig;
 import com.example.administrator.mytestallhere.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MuiltyApksbuildTestActivity extends AppCompatActivity {
+public class MuiltyApksbuildTestActivity extends BaseActivity {
     @BindView(R.id.tv)
     TextView tv;
     @Override

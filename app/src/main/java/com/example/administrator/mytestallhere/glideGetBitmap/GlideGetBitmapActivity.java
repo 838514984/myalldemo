@@ -11,13 +11,14 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
+import com.example.administrator.mytestallhere.BaseActivity;
 import com.example.administrator.mytestallhere.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class GlideGetBitmapActivity extends AppCompatActivity {
+public class GlideGetBitmapActivity extends BaseActivity {
     @BindView(R.id.iv)
     ImageView iv;
     Bitmap bitmap;

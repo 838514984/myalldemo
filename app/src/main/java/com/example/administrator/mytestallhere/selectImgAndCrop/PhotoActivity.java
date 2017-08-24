@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 
+import com.example.administrator.mytestallhere.BaseActivity;
 import com.example.administrator.mytestallhere.R;
 
 import org.greenrobot.eventbus.EventBus;
@@ -21,7 +22,7 @@ import java.util.Date;
  * Created by Administrator on 2017/4/19 0019.
  */
 
-public class PhotoActivity extends Activity {
+public class PhotoActivity extends BaseActivity {
     public static void startActivity(Context context, int type,
                                      String className,int outPutSize)
     {

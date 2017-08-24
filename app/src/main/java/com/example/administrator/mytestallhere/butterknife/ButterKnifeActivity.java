@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.administrator.mytestallhere.BaseActivity;
 import com.example.administrator.mytestallhere.R;
 import com.example.administrator.mytestallhere.rxJava.TestRxJavaActivity;
 
@@ -17,7 +18,7 @@ import butterknife.BindView;
 import butterknife.BindViews;
 import butterknife.OnClick;
 
-public class ButterKnifeActivity extends FragmentActivity {
+public class ButterKnifeActivity extends BaseActivity {
     @BindView(R.id.tv) TextView tv;
     @BindView(R.id.ed) EditText editText;
     @BindView(R.id.btn) Button btn;

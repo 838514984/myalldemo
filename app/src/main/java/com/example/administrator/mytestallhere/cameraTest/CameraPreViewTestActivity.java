@@ -11,6 +11,7 @@ import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
+import com.example.administrator.mytestallhere.BaseActivity;
 import com.example.administrator.mytestallhere.R;
 import com.example.administrator.mytestallhere.rxJava.TestRxJavaActivity;
 import com.tbruyelle.rxpermissions2.RxPermissions;
@@ -27,7 +28,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 
-public class CameraPreViewTestActivity extends AppCompatActivity {
+public class CameraPreViewTestActivity extends BaseActivity {
     Camera camera;
     SurfaceHolder surfaceHolder;
     @BindView(R.id.surfaceview)

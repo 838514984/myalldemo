@@ -12,7 +12,9 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 注意这里有一个android:icon:"xxxx" 省略，然后下面用了融合节点node，这就表示用了低优先级的manifest中的icon，具体的merg 详情点击左下角的merg manifest -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- 注意这里有一个android:icon:"xxxx" 省略，然后下面用了融合节点node，这就表示用了低优先级的manifest中的icon，具体的merg 详情点击左下角的merg manifest -->
     <application
         android:allowBackup="true"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -45,7 +47,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".multiApksBuildTest.MuiltyApksbuildTestActivity" />
-        <activity android:name=".buildConfigTest.BuildConfigActivity"></activity>
+        <activity android:name=".buildConfigTest.BuildConfigActivity" />
+        <activity android:name=".viewpagerTest.ViewPagerActivity" />
+        <activity android:name=".TransitionsTest.activityTransitionTest.ActivityAAA" />
+        <activity android:name=".TransitionsTest.activityTransitionTest.ActivityBBB"></activity>
     </application>
 
 </manifest>
