@@ -18,6 +18,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
+import com.example.administrator.mytestallhere.TransitionsTest.activityTransitionTest.ActivityAAA;
+import com.example.administrator.mytestallhere.TransitionsTest.activityTransitionTest.ControllerActivity;
 import com.example.administrator.mytestallhere.buildConfigTest.BuildConfigActivity;
 import com.example.administrator.mytestallhere.butterknife.ButterKnifeActivity;
 import com.example.administrator.mytestallhere.cameraTest.CameraPreViewTestActivity;
@@ -55,6 +57,8 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         add("MultiApksTest");
         add("BuildConfigAdditionTest");
         add("ViewpagerTest");
+        add("overridePendingTransition Activity Test");
+        add("Transition Activity Test");
     }};
 
     @Override
@@ -66,7 +70,6 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         adapter = new MyAdapter();
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(this);
-        StatusBarUtil.setPaddingSmart(this,lv);
 
     }
 
@@ -114,6 +117,14 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 break;
             case 13:
                 startActivity(new Intent(this, ViewPagerActivity.class));
+                break;
+            case 14:
+                startActivity(new Intent(this, ActivityAAA.class));
+                break;
+            case 15:
+                startActivity(new Intent(this, ControllerActivity.class));
+                break;
+
         }
     }
 

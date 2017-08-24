@@ -10,6 +10,8 @@ import android.view.Window;
 
 import com.example.administrator.mytestallhere.statusutil.StatusBarUtil;
 
+import butterknife.ButterKnife;
+
 /**
  * Created by Administrator on 2017/8/24 0024.
  */
@@ -28,5 +30,6 @@ public class BaseActivity extends FragmentActivity {
         super.onPostCreate(savedInstanceState);
         rootView=((ViewGroup)getWindow().getDecorView().findViewById(android.R.id.content)).getChildAt(0);
         rootView.setFitsSystemWindows(true);
+        ButterKnife.bind(this);
     }
 }

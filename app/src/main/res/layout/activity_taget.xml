@@ -4,12 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.example.administrator.mytestallhere.TransitionsTest.activityTransitionTest.ActivityBBB">
+    tools:context="com.example.administrator.mytestallhere.TransitionsTest.activityTransitionTest.TagetActivity">
 <ImageView
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="300dp"
     android:src="@mipmap/mei_1"
-    android:scaleType="fitXY"
+    android:scaleType="centerCrop"
     />
 </LinearLayout>

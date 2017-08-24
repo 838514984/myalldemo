@@ -50,7 +50,9 @@
         <activity android:name=".buildConfigTest.BuildConfigActivity" />
         <activity android:name=".viewpagerTest.ViewPagerActivity" />
         <activity android:name=".TransitionsTest.activityTransitionTest.ActivityAAA" />
-        <activity android:name=".TransitionsTest.activityTransitionTest.ActivityBBB"></activity>
+        <activity android:name=".TransitionsTest.activityTransitionTest.ActivityBBB" />
+        <activity android:name=".TransitionsTest.activityTransitionTest.ControllerActivity" />
+        <activity android:name=".TransitionsTest.activityTransitionTest.TagetActivity"></activity>
     </application>
 
 </manifest>
