@@ -35,6 +35,7 @@ public class TagetActivity extends BaseActivity {
     @Override
     public void onBackPressed() {
         finishAfterTransition();
+        //finish();//注意这里要用上面那句
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)

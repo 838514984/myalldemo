@@ -58,7 +58,7 @@ android {
         debug {
             minifyEnabled false
 
-            applicationIdSuffix '.ddddbug'
+            //applicationIdSuffix '.ddddbug'    为了方便，注了注了
             buildConfigField "String", "MyBuild", "\"debug buildConfigFields\""
             resValue "string", "buildTime", "1"
             resValue "string", "app_name", "TestAlldebug"
@@ -80,7 +80,7 @@ android {
     productFlavors {
         myray {
             //dimension 'seconed'
-            applicationId 'mybase.com.example.administrator.mytestallhere'
+            //applicationId 'mybase.com.example.administrator.mytestallhere'    为了方便，注了注了
             manifestPlaceholders = [CHANNEL: "myray"]
         }
         treasure {

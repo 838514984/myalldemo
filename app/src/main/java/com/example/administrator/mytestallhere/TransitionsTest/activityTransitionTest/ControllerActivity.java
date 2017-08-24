@@ -13,7 +13,10 @@ import android.transition.Explode;
 import android.transition.Fade;
 import android.transition.Slide;
 import android.transition.Transition;
+import android.transition.TransitionManager;
+import android.view.ViewAnimationUtils;
 import android.widget.ExpandableListAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.administrator.mytestallhere.BaseActivity;
@@ -30,7 +33,8 @@ public class ControllerActivity extends BaseActivity {
     @BindView(R.id.tv_3)
     TextView mTvExplode;
     private TransitionType type;
-
+    @BindView(R.id.img)
+    ImageView mIv;
     enum TransitionType {FADE, SLIDE, EXPLODE}
 
     @Override
@@ -67,8 +71,9 @@ public class ControllerActivity extends BaseActivity {
     private void startActivity() {
         Intent i = new Intent(this, TagetActivity.class);
         i.putExtra("type", type);
-        ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(this);
+        ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(this,mIv,"treasure");
         startActivity(i, activityOptionsCompat.toBundle());
+
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
