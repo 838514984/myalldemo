@@ -5,5 +5,5 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.administrator.mytestallhere.testStatusBar.TestStatusBar">
-<include android:id="@+id/fl" layout="@layout/layout_my_topbar"/>
+<include android:id="@+id/immersiveView" layout="@layout/layout_my_topbar"/>
 </FrameLayout>

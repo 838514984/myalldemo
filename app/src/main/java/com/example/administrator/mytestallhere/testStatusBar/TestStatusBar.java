@@ -26,7 +26,7 @@ public class TestStatusBar extends AppCompatActivity {
         systemUiVisiable|=View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
         getWindow().getDecorView().setSystemUiVisibility(systemUiVisiable);
         getWindow().setStatusBarColor(0);
-        rl= (FrameLayout) findViewById(R.id.fl);
+        rl= (FrameLayout) findViewById(R.id.immersiveView);
         //设置Margin
         ViewGroup.LayoutParams layoutParams=rl.getLayoutParams();
         layoutParams.height+=getStatusBarHeight(this);

@@ -10,6 +10,7 @@ import android.view.Window;
 
 import com.example.administrator.mytestallhere.statusutil.StatusBarUtil;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -18,6 +19,10 @@ import butterknife.ButterKnife;
 
 public class BaseActivity extends FragmentActivity {
     View rootView;
+    @Nullable
+    @BindView(R.id.immersiveView)
+    View immersiveView;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,8 +33,10 @@ public class BaseActivity extends FragmentActivity {
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-        rootView=((ViewGroup)getWindow().getDecorView().findViewById(android.R.id.content)).getChildAt(0);
-        rootView.setFitsSystemWindows(true);
+        //rootView=((ViewGroup)getWindow().getDecorView().findViewById(android.R.id.content)).getChildAt(0);
+        //rootView.setFitsSystemWindows(true);
         ButterKnife.bind(this);
+        if (immersiveView != null)
+            StatusBarUtil.setPaddingSmart(this, immersiveView);
     }
 }

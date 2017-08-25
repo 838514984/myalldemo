@@ -52,7 +52,8 @@
         <activity android:name=".TransitionsTest.activityTransitionTest.ActivityAAA" />
         <activity android:name=".TransitionsTest.activityTransitionTest.ActivityBBB" />
         <activity android:name=".TransitionsTest.activityTransitionTest.ControllerActivity" />
-        <activity android:name=".TransitionsTest.activityTransitionTest.TagetActivity"></activity>
+        <activity android:name=".TransitionsTest.activityTransitionTest.TagetActivity" />
+        <activity android:name=".TransitionsTest.activityTransitionTest.TransitionManagerActivity"></activity>
     </application>
 
 </manifest>
