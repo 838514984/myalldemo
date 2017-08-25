@@ -13,12 +13,17 @@ public class RelativeLayoutpadding30dp extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_relative_layoutpadding30dp);
+
         findViewById(R.id.tv).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(RelativeLayoutpadding30dp.this,FrameLayoutContainerpadding30dp.class));
             }
         });
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return  R.layout.activity_relative_layoutpadding30dp;
     }
 }

@@ -28,13 +28,16 @@ public class ButterKnifeActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_butter_knife);
-        butterknife.ButterKnife.bind(this);
         tv.setText("hahahahha ");
         for (View view:list){
             TestRxJavaActivity.LogE(String.format("------------view.getClassName %s-----------------",view.getClass().getSimpleName()));
         }
 
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_butter_knife;
     }
 
     @OnClick(R.id.tv)

@@ -32,7 +32,7 @@ public class TransitionManagerActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_transition_manager);
+
 
         transitionManager=new TransitionManager();
 
@@ -46,6 +46,11 @@ public class TransitionManagerActivity extends BaseActivity {
         scene2=Scene.getSceneForLayout(rootView,R.layout.activity_animations_scene2,this);
         scene3=Scene.getSceneForLayout(rootView,R.layout.activity_animations_scene3,this);
         scene4=Scene.getSceneForLayout(rootView,R.layout.activity_animations_scene4,this);
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return  R.layout.activity_transition_manager;
     }
 
     @Override

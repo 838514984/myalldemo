@@ -40,7 +40,12 @@ public class ControllerActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_controller);
+
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_controller;
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)

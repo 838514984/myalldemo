@@ -27,10 +27,15 @@ public class DependencesActivity  extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dependences);
+
         SubLibTest.Logger("invoke the subLibTest's class method");
         Toast.makeText(this, "invoke the subLibTest's class method  as a aar library into mylibrary success", 0).show();
         ButterKnife.bind(this);
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_dependences;
     }
 
     @OnClick(R.id.btn_main)

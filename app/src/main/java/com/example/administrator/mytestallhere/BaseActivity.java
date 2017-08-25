@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
  * Created by Administrator on 2017/8/24 0024.
  */
 
-public class BaseActivity extends FragmentActivity {
+public abstract class BaseActivity extends FragmentActivity {
     View rootView;
     @Nullable
     @BindView(R.id.immersiveView)
@@ -28,6 +28,10 @@ public class BaseActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         getWindow().requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS);
         StatusBarUtil.immersive(this);
+        setContentView(getLayoutId());
+        ButterKnife.bind(this);
+        if (immersiveView != null)
+            StatusBarUtil.setPaddingSmart(this, immersiveView);
     }
 
     @Override
@@ -35,8 +39,8 @@ public class BaseActivity extends FragmentActivity {
         super.onPostCreate(savedInstanceState);
         //rootView=((ViewGroup)getWindow().getDecorView().findViewById(android.R.id.content)).getChildAt(0);
         //rootView.setFitsSystemWindows(true);
-        ButterKnife.bind(this);
-        if (immersiveView != null)
-            StatusBarUtil.setPaddingSmart(this, immersiveView);
+
     }
+
+    protected abstract int getLayoutId();
 }

@@ -37,9 +37,13 @@ public class CameraPreViewTestActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_camera_pre_view_test);
         ButterKnife.bind(this);
 
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_camera_pre_view_test;
     }
 
 

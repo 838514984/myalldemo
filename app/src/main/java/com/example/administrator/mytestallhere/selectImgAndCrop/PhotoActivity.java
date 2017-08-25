@@ -46,7 +46,7 @@ public class PhotoActivity extends BaseActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_photo);
+
         resloveIntent(getIntent());
         File file = new File(Environment.getExternalStorageDirectory() + "/photo");
         if (!file.exists()) {
@@ -59,6 +59,12 @@ public class PhotoActivity extends BaseActivity {
 
         init();
     }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_photo;
+    }
+
     /**
      * 处理参数
      */

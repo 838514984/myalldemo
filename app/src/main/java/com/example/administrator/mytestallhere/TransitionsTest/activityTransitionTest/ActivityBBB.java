@@ -14,7 +14,12 @@ public class ActivityBBB extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bbb);
+
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_bbb;
     }
 
     @Override

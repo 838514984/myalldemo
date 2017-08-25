@@ -16,8 +16,13 @@ public class MuiltyApksbuildTestActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_muilty_apksbuild_test);
+
         ButterKnife.bind(this);
         tv.setText(Constant.msg);
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_muilty_apksbuild_test;
     }
 }

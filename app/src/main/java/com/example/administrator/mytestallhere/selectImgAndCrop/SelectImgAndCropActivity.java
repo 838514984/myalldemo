@@ -35,8 +35,7 @@ public class SelectImgAndCropActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_select_img_and_crop);
-        ButterKnife.bind(this);
+
         EventBus.getDefault().register(this);
         RxTextView.textChanges(editText).subscribe(new Consumer<CharSequence>() {
             @Override
@@ -44,6 +43,11 @@ public class SelectImgAndCropActivity extends BaseActivity {
                 outputsize=charSequence.toString();
             }
         });
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return  R.layout.activity_select_img_and_crop;
     }
 
     @Override

@@ -53,7 +53,15 @@
         <activity android:name=".TransitionsTest.activityTransitionTest.ActivityBBB" />
         <activity android:name=".TransitionsTest.activityTransitionTest.ControllerActivity" />
         <activity android:name=".TransitionsTest.activityTransitionTest.TagetActivity" />
-        <activity android:name=".TransitionsTest.activityTransitionTest.TransitionManagerActivity"></activity>
+        <activity android:name=".TransitionsTest.activityTransitionTest.TransitionManagerActivity" />
+        <activity android:name=".startActivityFromBrowseTest.StartActivityFromBrowse">
+            <intent-filter >
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="treasure"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

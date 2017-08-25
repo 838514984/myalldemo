@@ -18,7 +18,7 @@ public class TagetActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_taget);
+
         type= (ControllerActivity.TransitionType) getIntent().getSerializableExtra("type");
         if (type== ControllerActivity.TransitionType.FADE){
             setTransition(Fade.class);
@@ -29,6 +29,11 @@ public class TagetActivity extends BaseActivity {
         if (type== ControllerActivity.TransitionType.EXPLODE){
             setTransition(Explode.class);
         }
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_taget;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)

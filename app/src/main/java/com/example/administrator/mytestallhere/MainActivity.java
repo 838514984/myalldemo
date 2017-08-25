@@ -66,13 +66,18 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
 
         lv = (ListView) findViewById(R.id.lv);
         adapter = new MyAdapter();
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(this);
 
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_main;
     }
 
     @Override

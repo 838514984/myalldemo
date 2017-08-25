@@ -37,7 +37,6 @@ public class RxBinDingActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rx_bin_ding);
         btnClickMe = (Button) findViewById(R.id.btn);
         editText1 = (EditText) findViewById(R.id.edit_1);
         editText2 = (EditText) findViewById(R.id.edit_2);
@@ -125,6 +124,11 @@ public class RxBinDingActivity extends BaseActivity {
         });
 
 
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_rx_bin_ding;
     }
 
     private boolean verfName(String s){

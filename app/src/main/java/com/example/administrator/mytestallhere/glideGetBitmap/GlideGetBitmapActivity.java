@@ -26,8 +26,6 @@ public class GlideGetBitmapActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_glide_get_bitmap);
-        ButterKnife.bind(this);
         Glide.with(this).load(R.drawable.ic_launcher).into(new SimpleTarget<Drawable>() {
             @Override
             public void onResourceReady(Drawable resource, Transition<? super Drawable> transition) {
@@ -39,6 +37,11 @@ public class GlideGetBitmapActivity extends BaseActivity {
             }
         });
 
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_glide_get_bitmap;
     }
 
     @Override

@@ -28,7 +28,6 @@ public class MaterialCalendarViewActivity extends BaseActivity implements OnDate
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_material_calendar_view);
         ButterKnife.bind(this);
         dialog = new MyCalendarDialog(this);
         dialog.setOnDateChangedListener(this);
@@ -49,6 +48,11 @@ public class MaterialCalendarViewActivity extends BaseActivity implements OnDate
         });
 
 
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_material_calendar_view;
     }
 
     @OnClick(R.id.btn)

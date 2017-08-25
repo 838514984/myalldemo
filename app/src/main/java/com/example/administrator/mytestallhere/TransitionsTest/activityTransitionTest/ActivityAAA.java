@@ -20,8 +20,14 @@ public class ActivityAAA extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_aa);
+
     }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_aa;
+    }
+
     @OnClick(R.id.img)
     public void click(){
         startActivity(new Intent(this,ActivityBBB.class));

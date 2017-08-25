@@ -40,11 +40,16 @@ public class TestPickActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test_pick);
+
         ButterKnife.bind(this);
         date=new Date();
         initNumberPicker();
         initTimePicker();
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_test_pick;
     }
 
 

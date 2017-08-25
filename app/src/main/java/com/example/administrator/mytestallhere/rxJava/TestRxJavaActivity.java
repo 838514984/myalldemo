@@ -30,7 +30,7 @@ public class TestRxJavaActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test_rx_java);
+
         //计时器
         //testTimer();
         //period count
@@ -39,6 +39,11 @@ public class TestRxJavaActivity extends BaseActivity {
         //testContact();
         //testMerge();
         testFlowable();
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_test_rx_java;
     }
 
 
