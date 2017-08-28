@@ -21,11 +21,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:node="merge">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter >
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="treasure"/>
             </intent-filter>
         </activity>
         <activity android:name=".testRelativeoutPaddingValueable.FrameLayoutContainerpadding30dp" />
@@ -36,7 +42,7 @@
         <activity android:name=".butterknife.ButterKnifeActivity" />
         <activity android:name=".cameraTest.CameraPreViewTestActivity" />
         <activity android:name=".selectImgAndCrop.SelectImgAndCropActivity" />
-        <activity android:name=".selectImgAndCrop.PhotoActivity" />
+        <activity android:name=".selectImgAndCrop.PhotoActivity"  android:exported="true"/>
         <activity android:name=".time_data_orotherpicker.TestPickActivity" />
         <activity android:name=".testmaterial_calendarview.MaterialCalendarViewActivity" />
         <activity android:name=".testDependences.DependencesActivity" />
@@ -62,6 +68,15 @@
                 <data android:scheme="treasure"/>
             </intent-filter>
         </activity>
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${APPLICATIONID}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

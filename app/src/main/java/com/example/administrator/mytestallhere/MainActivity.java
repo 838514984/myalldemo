@@ -1,5 +1,6 @@
 package com.example.administrator.mytestallhere;
 
+import android.Manifest;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -36,9 +37,12 @@ import com.example.administrator.mytestallhere.testStatusBar.TestStatusBar;
 import com.example.administrator.mytestallhere.testmaterial_calendarview.MaterialCalendarViewActivity;
 import com.example.administrator.mytestallhere.time_data_orotherpicker.TestPickActivity;
 import com.example.administrator.mytestallhere.viewpagerTest.ViewPagerActivity;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import io.reactivex.functions.Consumer;
 
 public class MainActivity extends BaseActivity implements AdapterView.OnItemClickListener {
     ListView lv;
@@ -72,6 +76,13 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         adapter = new MyAdapter();
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(this);
+        RxPermissions rxPermissions=new RxPermissions(this);
+        rxPermissions.request(Manifest.permission.WRITE_EXTERNAL_STORAGE).subscribe(new Consumer<Boolean>() {
+            @Override
+            public void accept(Boolean aBoolean) throws Exception {
+                //Toast.makeText(BaseActivity.this,aBoolean?"授权成功":"授权失败",0).show();
+            }
+        });
 
     }
 

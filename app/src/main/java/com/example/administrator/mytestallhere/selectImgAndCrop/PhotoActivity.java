@@ -3,20 +3,25 @@ package com.example.administrator.mytestallhere.selectImgAndCrop;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.v4.content.FileProvider;
 
 import com.example.administrator.mytestallhere.BaseActivity;
 import com.example.administrator.mytestallhere.R;
+import com.example.administrator.mytestallhere.util.Logger;
 
 import org.greenrobot.eventbus.EventBus;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Administrator on 2017/4/19 0019.
@@ -39,9 +44,10 @@ public class PhotoActivity extends BaseActivity {
     private int type;
     private String className;
     private String tempFileFolderpath = Environment.getExternalStorageDirectory() + "/photo";
-    private File tempFile = new File(Environment.getExternalStorageDirectory() + "/photo", getPhotoFileName());
+    private File tempFile = new File(Environment.getExternalStorageDirectory()+"/photo", getPhotoFileName());
     private File tempFileAfterResize = new File(Environment.getExternalStorageDirectory() + "/photo", "resize"+getPhotoFileName());
 
+    private String mPackageName;
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,8 +62,11 @@ public class PhotoActivity extends BaseActivity {
                 // TODO: handle exception
             }
         }
+        mPackageName=getPackageName();
+        Logger.Erroe(mPackageName);
 
         init();
+
     }
 
     @Override
@@ -81,7 +90,18 @@ public class PhotoActivity extends BaseActivity {
         if (type == PHOTO_REQUEST_TAKEPHOTO)
         {
             Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            intent.putExtra(MediaStore.EXTRA_OUTPUT,Uri.fromFile(tempFile));
+            //7.0以上必须用ContentProvider
+            Uri uri= FileProvider.getUriForFile(this,mPackageName+".fileprovider",tempFile);
+            intent.putExtra(MediaStore.EXTRA_OUTPUT,uri);
+            //下面两句也是
+            intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION|Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+            // fix java.lang.SecurityException: Permission Denial: opening provider android.support.v4.content.FileProvider from ProcessRecord{42725078 24872:com.android.camera/u0a14} (pid=24872, uid=10014) that is not exported from uid 10310
+            List<ResolveInfo> resInfoList= getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+            for (ResolveInfo resolveInfo : resInfoList) {
+                String packageName = resolveInfo.activityInfo.packageName;
+                grantUriPermission(packageName, uri,
+                        Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+            }
             startActivityForResult(intent, PHOTO_REQUEST_TAKEPHOTO);
         }
         else
@@ -104,11 +124,15 @@ public class PhotoActivity extends BaseActivity {
                     finish();
                     return;
                 }
-
-                startPhotoZoom(Uri.fromFile(tempFile), outPutSize);
+                Logger.Erroe("PHOTO_REQUEST_TAKEPHOTO "+getUriFromFile(tempFile,null));
+                startPhotoZoom(getUriFromFile(tempFile,null), outPutSize);
                 break;
 
             case PHOTO_REQUEST_GALLERY:
+                if (data!=null){
+                    if (data.getData()!=null)
+                        Logger.Erroe("PHOTO_REQUEST_GALLERY "+data.getData().toString());
+                }
                 if (data != null)
                     startPhotoZoom(data.getData(), outPutSize);
                 else
@@ -116,6 +140,7 @@ public class PhotoActivity extends BaseActivity {
                 break;
 
             case PHOTO_REQUEST_CUT:
+
                 if (tempFileAfterResize.length() != 0)
                     returnResult();
                 else
@@ -160,9 +185,11 @@ public class PhotoActivity extends BaseActivity {
         intent.putExtra("outputX", size);
         intent.putExtra("outputY", size);
         intent.putExtra("return-data", false);
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(tempFileAfterResize));
+        intent.putExtra(MediaStore.EXTRA_OUTPUT,Uri.fromFile(tempFileAfterResize));//这里好像只能用Uri.fromFile
+        intent.putExtra("return-data", false);
         intent.putExtra("outputFormat", Bitmap.CompressFormat.JPEG.toString());
 
+        intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION|Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
         startActivityForResult(intent, PHOTO_REQUEST_CUT);
     }
     //自己需要的操作
@@ -185,5 +212,13 @@ public class PhotoActivity extends BaseActivity {
     public int dp2px(int dp){
            return (int) (getResources().getDisplayMetrics().scaledDensity*dp);
        }
+
+
+    private Uri getUriFromFile(File file,Intent intent){
+        if (intent!=null){
+            intent.setFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION|Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        }
+        return FileProvider.getUriForFile(this,mPackageName+".fileprovider",file);
+    }
 
 }
