@@ -30,6 +30,7 @@ import com.example.administrator.mytestallhere.multiApksBuildTest.MuiltyApksbuil
 import com.example.administrator.mytestallhere.rxJava.TestRxJavaActivity;
 import com.example.administrator.mytestallhere.rxbinding.RxBinDingActivity;
 import com.example.administrator.mytestallhere.selectImgAndCrop.SelectImgAndCropActivity;
+import com.example.administrator.mytestallhere.startActivityFromBrowseTest.StartActivityFromBrowse;
 import com.example.administrator.mytestallhere.statusutil.StatusBarUtil;
 import com.example.administrator.mytestallhere.testDependences.DependencesActivity;
 import com.example.administrator.mytestallhere.testRelativeoutPaddingValueable.RelativeLayoutpadding30dp;
@@ -65,6 +66,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         add("overridePendingTransition Activity Test");
         add("Transition Activity Test");
         add("TransitionManagerActivityTest");
+        add("StartActivityFromBrowsTest");
     }};
 
     @Override
@@ -144,6 +146,9 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 break;
             case 16:
                 startActivity(new Intent(this, TransitionManagerActivity.class));
+                break;
+            case 17:
+                startActivity(new Intent(this, StartActivityFromBrowse.class));
                 break;
 
         }

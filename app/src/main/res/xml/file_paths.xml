@@ -4,6 +4,7 @@
     <cache-path name="." path="." />
     <!--path 指的是路径，name 是别名 原本路径sd/photo/xxxx.jpg 转化为cotent://xxxxx/photo_alias/xxxx.jpg-->
     <external-path name="photo_alias" path="photo" />
+    <external-path name="myHtml_alias" path="myHtml"/>
     <external-files-path name="." path="." />
     <external-cache-path name="." path="." />
 </paths>

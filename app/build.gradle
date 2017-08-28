@@ -112,9 +112,11 @@ android {
 //        }
         myray {
             java.srcDirs = ['src/main/java', 'src/mybase/java']
+            assets.srcDirs=['assets']
 //!!!!! not like follows : main/java....mybase/java.....
         }
         treasure {
+            assets.srcDirs=['assets']
             java.srcDirs = ['src/main/java', 'src/treasure/java']
 //!!!!! not like follows : main/java....mybase/java.....
         }
