@@ -16,22 +16,27 @@
 
     <!-- 注意这里有一个android:icon:"xxxx" 省略，然后下面用了融合节点node，这就表示用了低优先级的manifest中的icon，具体的merg 详情点击左下角的merg manifest -->
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:node="merge">
-        <activity android:name=".MainActivity" android:launchMode="singleTask">
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <intent-filter >
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:scheme="treasure"/>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="treasure" />
             </intent-filter>
         </activity>
         <activity android:name=".testRelativeoutPaddingValueable.FrameLayoutContainerpadding30dp" />
@@ -42,7 +47,9 @@
         <activity android:name=".butterknife.ButterKnifeActivity" />
         <activity android:name=".cameraTest.CameraPreViewTestActivity" />
         <activity android:name=".selectImgAndCrop.SelectImgAndCropActivity" />
-        <activity android:name=".selectImgAndCrop.PhotoActivity"  android:exported="true"/>
+        <activity
+            android:name=".selectImgAndCrop.PhotoActivity"
+            android:exported="true" />
         <activity android:name=".time_data_orotherpicker.TestPickActivity" />
         <activity android:name=".testmaterial_calendarview.MaterialCalendarViewActivity" />
         <activity android:name=".testDependences.DependencesActivity" />
@@ -61,13 +68,16 @@
         <activity android:name=".TransitionsTest.activityTransitionTest.TagetActivity" />
         <activity android:name=".TransitionsTest.activityTransitionTest.TransitionManagerActivity" />
         <activity android:name=".startActivityFromBrowseTest.StartActivityFromBrowse">
-            <intent-filter >
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:scheme="treasure"/>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="treasure" />
             </intent-filter>
         </activity>
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${APPLICATIONID}.fileprovider"
@@ -77,6 +87,8 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
+
+        <activity android:name=".memoryleak.MemoryActivityTest"></activity>
     </application>
 
 </manifest>

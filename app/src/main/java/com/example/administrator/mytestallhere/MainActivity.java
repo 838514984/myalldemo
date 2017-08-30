@@ -26,6 +26,7 @@ import com.example.administrator.mytestallhere.buildConfigTest.BuildConfigActivi
 import com.example.administrator.mytestallhere.butterknife.ButterKnifeActivity;
 import com.example.administrator.mytestallhere.cameraTest.CameraPreViewTestActivity;
 import com.example.administrator.mytestallhere.glideGetBitmap.GlideGetBitmapActivity;
+import com.example.administrator.mytestallhere.memoryleak.MemoryActivityTest;
 import com.example.administrator.mytestallhere.multiApksBuildTest.MuiltyApksbuildTestActivity;
 import com.example.administrator.mytestallhere.rxJava.TestRxJavaActivity;
 import com.example.administrator.mytestallhere.rxbinding.RxBinDingActivity;
@@ -67,6 +68,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         add("Transition Activity Test");
         add("TransitionManagerActivityTest");
         add("StartActivityFromBrowsTest");
+        add("MemoryLeakTest");
     }};
 
     @Override
@@ -149,6 +151,9 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 break;
             case 17:
                 startActivity(new Intent(this, StartActivityFromBrowse.class));
+                break;
+            case 18:
+                startActivity(new Intent(this, MemoryActivityTest.class));
                 break;
 
         }

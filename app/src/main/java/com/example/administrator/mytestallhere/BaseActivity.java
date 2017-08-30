@@ -52,5 +52,7 @@ public abstract class BaseActivity extends FragmentActivity {
 
     }
 
-    protected abstract int getLayoutId();
+    protected  int getLayoutId(){
+        return  0;
+    }
 }
