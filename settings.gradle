@@ -1,14 +1,14 @@
-include ':app', ':mylibrary', ':mysublib', ':mythirdlib'
+include ':app', ':mylibrary', ':mysublib', ':mythirdlib', ':secretbaselibrary'
 
-println 'Home Die: '+gradle.gradleHomeDir
-println 'UserHomeDir: '+gradle.gradleUserHomeDir
+println 'Home Die: ' + gradle.gradleHomeDir
+println 'UserHomeDir: ' + gradle.gradleUserHomeDir
 
-def toDoSomething(){
+def toDoSomething() {
     println 'hello,it is doing an another thing'
 }
 
 toDoSomething()
-println '-------------------gradle.gradle: '+gradle.gradle
+println '-------------------gradle.gradle: ' + gradle.gradle
 
 
 
