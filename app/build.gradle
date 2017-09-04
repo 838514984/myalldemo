@@ -142,7 +142,7 @@ android {
 configurations {
     // Initializes a placeholder for the freeDebugApk dependency configuration.
     //productFlavor+buildType+dependMode
-    myrayDebugCompile{}
+    myrayDebugCompile {}
 }
 
 
@@ -181,14 +181,14 @@ dependencies {
     //myrayCompile 'com.jakewharton:butterknife:8.8.0'      //注意这里是只有选择myray的productFlavor才会用这个依赖
     //treasureCompile project(':mylibrary')                   //这里也是
     compile project(':mylibrary')
+    //内存泄露
+    //这种写法必须在configurations下面定义！！
+    //debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.2'
+    //releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.2'
     compile 'com.jakewharton:butterknife:8.8.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.0'
-    //内存泄露
-    //这种写法必须在configurations下面定义！！
     myrayDebugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.2'
-    //debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.2'
-    //releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.2'
 }
 
 

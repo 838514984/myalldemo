@@ -32,6 +32,7 @@ public abstract class BaseActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         getWindow().requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS);
         StatusBarUtil.immersive(this);
+
         setContentView(getLayoutId());
         ButterKnife.bind(this);
         if (immersiveView != null)
@@ -52,7 +53,5 @@ public abstract class BaseActivity extends FragmentActivity {
 
     }
 
-    protected  int getLayoutId(){
-        return  0;
-    }
+    protected  abstract int getLayoutId();
 }

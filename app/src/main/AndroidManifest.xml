@@ -88,7 +88,8 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".memoryleak.MemoryActivityTest"></activity>
+        <activity android:name=".memoryleak.MemoryActivityTest" />
+        <activity android:name=".myJecenterDependence.MyJecenterDependence"></activity>
     </application>
 
 </manifest>

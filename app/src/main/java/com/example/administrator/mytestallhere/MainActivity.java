@@ -28,6 +28,7 @@ import com.example.administrator.mytestallhere.cameraTest.CameraPreViewTestActiv
 import com.example.administrator.mytestallhere.glideGetBitmap.GlideGetBitmapActivity;
 import com.example.administrator.mytestallhere.memoryleak.MemoryActivityTest;
 import com.example.administrator.mytestallhere.multiApksBuildTest.MuiltyApksbuildTestActivity;
+import com.example.administrator.mytestallhere.myJecenterDependence.MyJecenterDependence;
 import com.example.administrator.mytestallhere.rxJava.TestRxJavaActivity;
 import com.example.administrator.mytestallhere.rxbinding.RxBinDingActivity;
 import com.example.administrator.mytestallhere.selectImgAndCrop.SelectImgAndCropActivity;
@@ -69,6 +70,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         add("TransitionManagerActivityTest");
         add("StartActivityFromBrowsTest");
         add("MemoryLeakTest");
+        add("MyJecenterDependence");
     }};
 
     @Override
@@ -154,6 +156,9 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 break;
             case 18:
                 startActivity(new Intent(this, MemoryActivityTest.class));
+                break;
+            case 19:
+                startActivity(new Intent(this, MyJecenterDependence.class));
                 break;
 
         }
