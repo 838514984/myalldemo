@@ -31,7 +31,7 @@ public class WebViewAndJsInvokeMethodActivity extends BaseActivity {
         mWebView.setWebChromeClient(new WebChromeClient(){
             @Override
             public boolean onJsAlert(WebView view, String url, String message, final JsResult result) {
-                Logger.Erroe("onJsAlert...."+" utl; "+url+" message: "+message);
+                Logger.error("onJsAlert...."+" utl; "+url+" message: "+message);
                 AlertDialog alertDialog=new AlertDialog.Builder(WebViewAndJsInvokeMethodActivity.this).setMessage(message).setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

@@ -14,7 +14,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 
 import io.reactivex.functions.Consumer;
 
@@ -145,7 +144,7 @@ public class GetAssetsFiles {
                 try {
                     InputStream inputStream= manager.open(fileName);
                     File outputdir=new File(Environment.getExternalStorageDirectory(),"myHtml");
-                    Logger.Erroe("outputfile: "+outputdir);
+                    Logger.error("outputfile: "+outputdir);
                     if (!outputdir.exists())
                         outputdir.mkdir();
                     File outputFile=new File(outputdir,fileName);

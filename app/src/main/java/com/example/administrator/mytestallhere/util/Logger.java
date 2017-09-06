@@ -7,7 +7,7 @@ import android.util.Log;
  */
 
 public class Logger {
-    public static void Erroe(String msg){
+    public static void error(String msg){
         Log.e("xxx",msg);
     }
 }

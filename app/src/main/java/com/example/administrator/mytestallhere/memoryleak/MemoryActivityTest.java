@@ -1,7 +1,6 @@
 package com.example.administrator.mytestallhere.memoryleak;
 
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 
@@ -31,9 +30,9 @@ public class MemoryActivityTest extends BaseActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Logger.Erroe("onThread doing end");
+                Logger.error("onThread doing end");
                 btn.setText("hhhhhhhhhhhhhhhhhhhhhh");
-                Logger.Erroe(btn.getText().toString());
+                Logger.error(btn.getText().toString());
             }
         },2000);
     }
@@ -41,6 +40,6 @@ public class MemoryActivityTest extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Logger.Erroe("onDestroy");
+        Logger.error("onDestroy");
     }
 }

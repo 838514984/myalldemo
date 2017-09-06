@@ -58,7 +58,7 @@ public class WebViewTestActivity extends BaseActivity {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                Logger.Erroe("shouldOverrideUrlLoading,request.method: "
+                Logger.error("shouldOverrideUrlLoading,request.method: "
                         + request.getMethod() + ", request.url: "
                         + request.getUrl() + ", request.getHeader: "
                         + request.getRequestHeaders());
@@ -69,55 +69,55 @@ public class WebViewTestActivity extends BaseActivity {
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
                 super.onPageStarted(view, url, favicon);
-                Logger.Erroe("onPageStarted: url: " + url);
+                Logger.error("onPageStarted: url: " + url);
             }
 
             @Override
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
-                Logger.Erroe("onPageFinished, url: " + url);
+                Logger.error("onPageFinished, url: " + url);
             }
 
             @Override
             public void onLoadResource(WebView view, String url) {
                 super.onLoadResource(view, url);
-                Logger.Erroe("onLoadResource, url : " + url);
+                Logger.error("onLoadResource, url : " + url);
             }
 
             @Override
             public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
                 super.onReceivedError(view, request, error);
-                Logger.Erroe("onReceivedError.");
+                Logger.error("onReceivedError.");
             }
 
             @Override
             public void onReceivedHttpError(WebView view, WebResourceRequest request, WebResourceResponse errorResponse) {
                 super.onReceivedHttpError(view, request, errorResponse);
-                Logger.Erroe("onReceivedHttpError.");
+                Logger.error("onReceivedHttpError.");
             }
 
             @Override
             public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
                 super.onReceivedSslError(view, handler, error);
-                Logger.Erroe("onReceivedSslError.");
+                Logger.error("onReceivedSslError.");
             }
 
             @Override
             public boolean shouldOverrideKeyEvent(WebView view, KeyEvent event) {
-                Logger.Erroe("shouldOverrideKeyEvent. event.getKeyCode: " + event.getKeyCode());
+                Logger.error("shouldOverrideKeyEvent. event.getKeyCode: " + event.getKeyCode());
                 return super.shouldOverrideKeyEvent(view, event);
             }
 
             @Override
             public void onScaleChanged(WebView view, float oldScale, float newScale) {
                 super.onScaleChanged(view, oldScale, newScale);
-                Logger.Erroe("onScaleChanged: oldScale: " + oldScale + " ,newScale: " + newScale);
+                Logger.error("onScaleChanged: oldScale: " + oldScale + " ,newScale: " + newScale);
             }
 
             @Override
             public void onReceivedLoginRequest(WebView view, String realm, String account, String args) {
                 super.onReceivedLoginRequest(view, realm, account, args);
-                Logger.Erroe("onReceivedLoginRequest, realm: " + realm + " ,args: " + args);
+                Logger.error("onReceivedLoginRequest, realm: " + realm + " ,args: " + args);
             }
         });
 
@@ -144,30 +144,30 @@ public class WebViewTestActivity extends BaseActivity {
             @Override
             public void onShowCustomView(View view, CustomViewCallback callback) {
                 super.onShowCustomView(view, callback);
-                Logger.Erroe("onShowCustomView: ");
+                Logger.error("onShowCustomView: ");
             }
 
             @Override
             public void onRequestFocus(WebView view) {
                 super.onRequestFocus(view);
-                Logger.Erroe("onRequestFocus.");
+                Logger.error("onRequestFocus.");
             }
 
             @Override
             public void onCloseWindow(WebView window) {
                 super.onCloseWindow(window);
-                Logger.Erroe("onCloseWindow.");
+                Logger.error("onCloseWindow.");
             }
 
             @Override
             public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
-                Logger.Erroe("onJsAlert");
+                Logger.error("onJsAlert");
                 return super.onJsAlert(view, url, message, result);
             }
 
             @Override
             public boolean onShowFileChooser(WebView webView, ValueCallback<Uri[]> filePathCallback, FileChooserParams fileChooserParams) {
-                Logger.Erroe("onShowFileChooser.");
+                Logger.error("onShowFileChooser.");
                 return super.onShowFileChooser(webView, filePathCallback, fileChooserParams);
             }
         });

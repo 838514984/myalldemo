@@ -1,6 +1,5 @@
 package com.example.administrator.mytestallhere.selectImgAndCrop;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -63,7 +62,7 @@ public class PhotoActivity extends BaseActivity {
             }
         }
         mPackageName=getPackageName();
-        Logger.Erroe(mPackageName);
+        Logger.error(mPackageName);
 
         init();
 
@@ -124,14 +123,14 @@ public class PhotoActivity extends BaseActivity {
                     finish();
                     return;
                 }
-                Logger.Erroe("PHOTO_REQUEST_TAKEPHOTO "+getUriFromFile(tempFile,null));
+                Logger.error("PHOTO_REQUEST_TAKEPHOTO "+getUriFromFile(tempFile,null));
                 startPhotoZoom(getUriFromFile(tempFile,null), outPutSize);
                 break;
 
             case PHOTO_REQUEST_GALLERY:
                 if (data!=null){
                     if (data.getData()!=null)
-                        Logger.Erroe("PHOTO_REQUEST_GALLERY "+data.getData().toString());
+                        Logger.error("PHOTO_REQUEST_GALLERY "+data.getData().toString());
                 }
                 if (data != null)
                     startPhotoZoom(data.getData(), outPutSize);

@@ -80,7 +80,7 @@ public class WebViewVideoActivity extends BaseActivity {
 
             @Override
             public void onShowCustomView(View view, CustomViewCallback callback) {
-                Logger.Erroe("onShowCustomView: view.className; "+view.getClass().getName());
+                Logger.error("onShowCustomView: view.className; "+view.getClass().getName());
                 showCustomView(view, callback);
             }
 
