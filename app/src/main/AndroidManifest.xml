@@ -13,6 +13,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <!-- 注意这里有一个android:icon:"xxxx" 省略，然后下面用了融合节点node，这就表示用了低优先级的manifest中的icon，具体的merg 详情点击左下角的merg manifest -->
     <application
@@ -89,7 +90,14 @@
         </provider>
 
         <activity android:name=".memoryleak.MemoryActivityTest" />
-        <activity android:name=".myJecenterDependence.MyJecenterDependence"></activity>
+        <activity android:name=".myJecenterDependence.MyJecenterDependence" />
+        <activity
+            android:name=".webviewTest.WebViewTestActivity"
+            android:hardwareAccelerated="true" />
+        <activity
+            android:name=".webviewTest.WebViewVideoActivity"
+            android:hardwareAccelerated="true" />
+        <activity android:name=".webviewTest.WebViewAndJsInvokeMethodActivity"></activity>
     </application>
 
 </manifest>

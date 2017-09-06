@@ -40,6 +40,9 @@ import com.example.administrator.mytestallhere.testStatusBar.TestStatusBar;
 import com.example.administrator.mytestallhere.testmaterial_calendarview.MaterialCalendarViewActivity;
 import com.example.administrator.mytestallhere.time_data_orotherpicker.TestPickActivity;
 import com.example.administrator.mytestallhere.viewpagerTest.ViewPagerActivity;
+import com.example.administrator.mytestallhere.webviewTest.WebViewAndJsInvokeMethodActivity;
+import com.example.administrator.mytestallhere.webviewTest.WebViewTestActivity;
+import com.example.administrator.mytestallhere.webviewTest.WebViewVideoActivity;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.util.ArrayList;
@@ -71,6 +74,9 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         add("StartActivityFromBrowsTest");
         add("MemoryLeakTest");
         add("MyJecenterDependence");
+        add("WebView Test");
+        add("WebViewVideoPlayer Test");
+        add("Android&JsInvoke");
     }};
 
     @Override
@@ -159,6 +165,15 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 break;
             case 19:
                 startActivity(new Intent(this, MyJecenterDependence.class));
+                break;
+            case 20:
+                startActivity(new Intent(this, WebViewTestActivity.class));
+                break;
+            case 21:
+                startActivity(new Intent(this, WebViewVideoActivity.class));
+                break;
+            case 22:
+                startActivity(new Intent(this, WebViewAndJsInvokeMethodActivity.class));
                 break;
 
         }
