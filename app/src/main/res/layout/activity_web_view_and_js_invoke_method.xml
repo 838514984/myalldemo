@@ -13,6 +13,12 @@
         android:layout_height="wrap_content"
         android:text="invoke js's method."
         />
+    <Button
+        android:id="@+id/btn_dynamic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dynamic alert text value in html's element"
+        />
     <WebView
         android:id="@+id/vb"
         android:layout_width="match_parent"

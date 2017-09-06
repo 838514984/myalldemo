@@ -71,7 +71,11 @@ public class WebViewAndJsInvokeMethodActivity extends BaseActivity {
             }
         });
     }
-
+    @OnClick(R.id.btn_dynamic)
+    public void dynamicAddJs(){
+        mWebView.loadUrl("javascript:function updateBtnValue(){document.getElementById(\"button1\").innerHTML=\"新按钮\";}");
+        mWebView.loadUrl("javascript:updateBtnValue()");
+    }
     class MyHtmlEvent{
         @JavascriptInterface
         public void callAndroid(String msg){
