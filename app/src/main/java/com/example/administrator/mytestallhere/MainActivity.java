@@ -25,6 +25,7 @@ import com.example.administrator.mytestallhere.TransitionsTest.activityTransitio
 import com.example.administrator.mytestallhere.buildConfigTest.BuildConfigActivity;
 import com.example.administrator.mytestallhere.butterknife.ButterKnifeActivity;
 import com.example.administrator.mytestallhere.cameraTest.CameraPreViewTestActivity;
+import com.example.administrator.mytestallhere.customAnnotationTest.myAnnotation.CustomAnnotationActivity;
 import com.example.administrator.mytestallhere.glideGetBitmap.GlideGetBitmapActivity;
 import com.example.administrator.mytestallhere.memoryleak.MemoryActivityTest;
 import com.example.administrator.mytestallhere.multiApksBuildTest.MuiltyApksbuildTestActivity;
@@ -77,6 +78,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         add("WebView Test");
         add("WebViewVideoPlayer Test");
         add("Android&JsInvoke");
+        add("CustomAnnotation");
     }};
 
     @Override
@@ -174,6 +176,9 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 break;
             case 22:
                 startActivity(new Intent(this, WebViewAndJsInvokeMethodActivity.class));
+                break;
+            case 23:
+                startActivity(new Intent(this, CustomAnnotationActivity.class));
                 break;
 
         }

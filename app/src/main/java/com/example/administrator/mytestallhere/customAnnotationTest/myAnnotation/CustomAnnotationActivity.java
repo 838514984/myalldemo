@@ -1,0 +1,37 @@
+package com.example.administrator.mytestallhere.customAnnotationTest.myAnnotation;
+
+import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.TextView;
+
+import com.example.administrator.mytestallhere.R;
+
+import java.util.concurrent.TimeUnit;
+
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
+
+public class CustomAnnotationActivity extends AppCompatActivity {
+    @MyBindView(R.id.tv)
+    TextView textView;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_custom_annotation);
+        MyAnnotationParser.bind(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Observable.timer(2, TimeUnit.SECONDS).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<Long>() {
+            @Override
+            public void accept(Long aLong) throws Exception {
+                textView.setText("HELLO WORLD...");
+            }
+        });
+    }
+}

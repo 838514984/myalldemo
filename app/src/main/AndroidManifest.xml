@@ -97,7 +97,8 @@
         <activity
             android:name=".webviewTest.WebViewVideoActivity"
             android:hardwareAccelerated="true" />
-        <activity android:name=".webviewTest.WebViewAndJsInvokeMethodActivity"></activity>
+        <activity android:name=".webviewTest.WebViewAndJsInvokeMethodActivity" />
+        <activity android:name=".customAnnotationTest.myAnnotation.CustomAnnotationActivity"></activity>
     </application>
 
 </manifest>
