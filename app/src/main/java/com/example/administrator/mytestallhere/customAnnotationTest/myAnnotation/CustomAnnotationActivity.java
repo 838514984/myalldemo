@@ -1,6 +1,5 @@
 package com.example.administrator.mytestallhere.customAnnotationTest.myAnnotation;
 
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -12,16 +11,17 @@ import java.util.concurrent.TimeUnit;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
-import io.reactivex.schedulers.Schedulers;
-
+@MyBindLayout(layoutId=R.layout.activity_custom_annotation)
 public class CustomAnnotationActivity extends AppCompatActivity {
     @MyBindView(R.id.tv)
     TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_custom_annotation);
-        MyAnnotationParser.bind(this);
+        //setContentView(R.layout.activity_custom_annotation);
+        MyAnnotationParser.bindContentView(this);
+        MyAnnotationParser.bindView(this);
+
     }
 
     @Override
