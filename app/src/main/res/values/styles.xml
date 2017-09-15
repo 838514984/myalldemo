@@ -15,5 +15,16 @@
     <style name="text_weekdays">
         <item name="android:textSize">0sp</item>
     </style>
-
+    <style name="alertDialogStyle">
+        <item name="android:fullDark">@drawable/herily_alertex_dlg_bg_full_dark</item>
+        <item name="android:topDark">@drawable/herily_alertex_dlg_bg_top_dark</item>
+        <item name="android:centerDark">@drawable/herily_alertex_dlg_bg_center_dark</item>
+        <item name="android:bottomDark">@drawable/herily_alertex_dlg_bg_bottom_dark</item>
+        <item name="android:fullBright">@drawable/herily_alertex_dlg_bg_full_dark</item>
+        <item name="android:topBright">@drawable/herily_alertex_dlg_bg_top_dark</item>
+        <item name="android:centerBright">@drawable/herily_alertex_dlg_bg_center_dark</item>
+        <item name="android:bottomBright">@drawable/herily_alertex_dlg_bg_bottom_dark</item>
+        <item name="android:bottomMedium">@drawable/herily_alertex_dlg_bg_bottom_dark</item>
+        <item name="android:centerMedium">@drawable/herily_alertex_dlg_bg_center_dark</item>
+    </style>
 </resources>
