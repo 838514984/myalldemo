@@ -120,7 +120,7 @@ public class SwipeDismissRecyclerViewTouchListener implements View.OnTouchListen
                 int x = (int) motionEvent.getRawX() - listViewCoords[0];
                 int y = (int) motionEvent.getRawY() - listViewCoords[1];
                 View child;
-
+                //find the touched view that is on the specific recyclerView
                 mDownView = mRecyclerView.findChildViewUnder(x, y);
                 updateItemBackground(mDownView, motionEvent);
 
@@ -352,8 +352,11 @@ public class SwipeDismissRecyclerViewTouchListener implements View.OnTouchListen
 
                     if (mSwiping) {
                         mDownView.setTranslationX(deltaX);
+                        //origin codes
                         mDownView.setAlpha(Math.max(0f, Math.min(1f,
                                 1f - 2f * Math.abs(deltaX) / mViewWidth)));
+                        //my codes,i think it works as well as the above codes.
+                        //mDownView.setAlpha(1-Math.abs(deltaX)/mViewWidth);
                         return true;
                     }
                 }

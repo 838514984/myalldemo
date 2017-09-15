@@ -98,7 +98,8 @@
             android:name=".webviewTest.WebViewVideoActivity"
             android:hardwareAccelerated="true" />
         <activity android:name=".webviewTest.WebViewAndJsInvokeMethodActivity" />
-        <activity android:name=".customAnnotationTest.myAnnotation.CustomAnnotationActivity"></activity>
+        <activity android:name=".customAnnotationTest.myAnnotation.CustomAnnotationActivity" />
+        <activity android:name=".learn.recyclerview.RcrviewSwipeDismissActivity"></activity>
     </application>
 
 </manifest>

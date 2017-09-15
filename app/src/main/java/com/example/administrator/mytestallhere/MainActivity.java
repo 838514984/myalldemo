@@ -27,6 +27,7 @@ import com.example.administrator.mytestallhere.butterknife.ButterKnifeActivity;
 import com.example.administrator.mytestallhere.cameraTest.CameraPreViewTestActivity;
 import com.example.administrator.mytestallhere.customAnnotationTest.myAnnotation.CustomAnnotationActivity;
 import com.example.administrator.mytestallhere.glideGetBitmap.GlideGetBitmapActivity;
+import com.example.administrator.mytestallhere.learn.recyclerview.RcrviewSwipeDismissActivity;
 import com.example.administrator.mytestallhere.memoryleak.MemoryActivityTest;
 import com.example.administrator.mytestallhere.multiApksBuildTest.MuiltyApksbuildTestActivity;
 import com.example.administrator.mytestallhere.myJecenterDependence.MyJecenterDependence;
@@ -54,7 +55,7 @@ import io.reactivex.functions.Consumer;
 public class MainActivity extends BaseActivity implements AdapterView.OnItemClickListener {
     ListView lv;
     BaseAdapter adapter;
-    List<String> mDatas = new ArrayList<String>() {{
+    public static List<String> mDatas = new ArrayList<String>() {{
         add("RelativeLayoutPaddingTest");
         add("StatusBarTest");
         add("RxBindingTest");
@@ -79,6 +80,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         add("WebViewVideoPlayer Test");
         add("Android&JsInvoke");
         add("CustomAnnotation");
+        add("RcrviewSwipeDismiss");
     }};
 
     @Override
@@ -180,7 +182,9 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
             case 23:
                 startActivity(new Intent(this, CustomAnnotationActivity.class));
                 break;
-
+            case 24:
+                startActivity(new Intent(this,RcrviewSwipeDismissActivity.class));
+                break;
         }
     }
 
