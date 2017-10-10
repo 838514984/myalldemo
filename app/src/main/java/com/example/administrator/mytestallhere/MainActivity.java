@@ -26,6 +26,7 @@ import com.example.administrator.mytestallhere.buildConfigTest.BuildConfigActivi
 import com.example.administrator.mytestallhere.butterknife.ButterKnifeActivity;
 import com.example.administrator.mytestallhere.cameraTest.CameraPreViewTestActivity;
 import com.example.administrator.mytestallhere.customAnnotationTest.myAnnotation.CustomAnnotationActivity;
+import com.example.administrator.mytestallhere.customdialog.CustomDialogActivity;
 import com.example.administrator.mytestallhere.glideGetBitmap.GlideGetBitmapActivity;
 import com.example.administrator.mytestallhere.learn.recyclerview.RcrviewSwipeDismissActivity;
 import com.example.administrator.mytestallhere.memoryleak.MemoryActivityTest;
@@ -81,6 +82,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         add("Android&JsInvoke");
         add("CustomAnnotation");
         add("RcrviewSwipeDismiss");
+        add("customDialogue");
     }};
 
     @Override
@@ -184,6 +186,9 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 break;
             case 24:
                 startActivity(new Intent(this,RcrviewSwipeDismissActivity.class));
+                break;
+            case 25:
+                startActivity(new Intent(this, CustomDialogActivity.class));
                 break;
         }
     }

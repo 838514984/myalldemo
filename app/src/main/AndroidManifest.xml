@@ -99,7 +99,8 @@
             android:hardwareAccelerated="true" />
         <activity android:name=".webviewTest.WebViewAndJsInvokeMethodActivity" />
         <activity android:name=".customAnnotationTest.myAnnotation.CustomAnnotationActivity" />
-        <activity android:name=".learn.recyclerview.RcrviewSwipeDismissActivity"></activity>
+        <activity android:name=".learn.recyclerview.RcrviewSwipeDismissActivity" />
+        <activity android:name=".customdialog.CustomDialogActivity"></activity>
     </application>
 
 </manifest>
