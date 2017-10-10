@@ -7,6 +7,7 @@ ext {
 
     publishedGroupId = 'com.secretbase'
     libraryName = 'FBLike'
+    //need to be identical with the name of moudle
     artifact = 'secretbaselibrary'
 
     libraryDescription = 'First time to test upload aar to jecenter.'
