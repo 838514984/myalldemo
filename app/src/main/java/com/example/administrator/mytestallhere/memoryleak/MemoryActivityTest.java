@@ -14,10 +14,11 @@ import butterknife.OnClick;
 public class MemoryActivityTest extends BaseActivity {
     @BindView(R.id.btn)
     Button btn;
+    UUUUUtil uuuuUtil;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        uuuuUtil=UUUUUtil.getInstance(this);
     }
 
     @Override
