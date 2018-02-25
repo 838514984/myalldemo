@@ -27,4 +27,14 @@
         <item name="android:bottomMedium">@drawable/herily_alertex_dlg_bg_bottom_dark</item>
         <item name="android:centerMedium">@drawable/herily_alertex_dlg_bg_center_dark</item>
     </style>
+
+    <style name="FullScreenTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+
 </resources>

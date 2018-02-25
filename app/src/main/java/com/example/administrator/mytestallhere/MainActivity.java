@@ -6,8 +6,10 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,16 +24,22 @@ import com.bumptech.glide.request.transition.Transition;
 import com.example.administrator.mytestallhere.TransitionsTest.activityTransitionTest.ActivityAAA;
 import com.example.administrator.mytestallhere.TransitionsTest.activityTransitionTest.ControllerActivity;
 import com.example.administrator.mytestallhere.TransitionsTest.activityTransitionTest.TransitionManagerActivity;
+import com.example.administrator.mytestallhere.aidl.AIDLActivity;
+import com.example.administrator.mytestallhere.aidl.MessengeActivity;
+import com.example.administrator.mytestallhere.aidl.MessengeService;
+import com.example.administrator.mytestallhere.alarmwhenlocked.PrepareActivity;
 import com.example.administrator.mytestallhere.buildConfigTest.BuildConfigActivity;
 import com.example.administrator.mytestallhere.butterknife.ButterKnifeActivity;
 import com.example.administrator.mytestallhere.cameraTest.CameraPreViewTestActivity;
 import com.example.administrator.mytestallhere.customAnnotationTest.myAnnotation.CustomAnnotationActivity;
 import com.example.administrator.mytestallhere.customdialog.CustomDialogActivity;
+import com.example.administrator.mytestallhere.edittextKeyboardAction.EditTextKeyboaedActivity;
 import com.example.administrator.mytestallhere.glideGetBitmap.GlideGetBitmapActivity;
 import com.example.administrator.mytestallhere.learn.recyclerview.RcrviewSwipeDismissActivity;
 import com.example.administrator.mytestallhere.memoryleak.MemoryActivityTest;
 import com.example.administrator.mytestallhere.multiApksBuildTest.MuiltyApksbuildTestActivity;
 import com.example.administrator.mytestallhere.myJecenterDependence.MyJecenterDependence;
+import com.example.administrator.mytestallhere.provider.ProviderActivity;
 import com.example.administrator.mytestallhere.rxJava.TestRxJavaActivity;
 import com.example.administrator.mytestallhere.rxbinding.RxBinDingActivity;
 import com.example.administrator.mytestallhere.selectImgAndCrop.SelectImgAndCropActivity;
@@ -42,6 +50,7 @@ import com.example.administrator.mytestallhere.testRelativeoutPaddingValueable.R
 import com.example.administrator.mytestallhere.testStatusBar.TestStatusBar;
 import com.example.administrator.mytestallhere.testmaterial_calendarview.MaterialCalendarViewActivity;
 import com.example.administrator.mytestallhere.time_data_orotherpicker.TestPickActivity;
+import com.example.administrator.mytestallhere.util.Logger;
 import com.example.administrator.mytestallhere.viewpagerTest.ViewPagerActivity;
 import com.example.administrator.mytestallhere.webviewTest.WebViewAndJsInvokeMethodActivity;
 import com.example.administrator.mytestallhere.webviewTest.WebViewTestActivity;
@@ -50,7 +59,9 @@ import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
+import io.reactivex.Observable;
 import io.reactivex.functions.Consumer;
 
 public class MainActivity extends BaseActivity implements AdapterView.OnItemClickListener {
@@ -83,12 +94,17 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         add("CustomAnnotation");
         add("RcrviewSwipeDismiss");
         add("customDialogue");
+        add("alarmWhenLocked");
+        add("EditTextKeyBoardAction");
+        add("AIDL Test");
+        add("Messenge Test");
+        add("Provider");
     }};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Logger.error("onCreate");
 
         lv = (ListView) findViewById(R.id.lv);
         adapter = new MyAdapter();
@@ -102,6 +118,51 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
             }
         });
 
+    }
+
+    @Override
+    protected void onResume() {
+        Logger.error("onResume");
+        super.onResume();
+        Intent intent=new Intent();
+        intent.setAction("xiixi");
+        sendBroadcast(intent);
+    }
+
+    @Override
+    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        Logger.error("onPostCreate");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Logger.error("onPause");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Logger.error("onStart");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Logger.error("onRestart");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Logger.error("onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Logger.error("onDestroy");
     }
 
     @Override
@@ -189,6 +250,26 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 break;
             case 25:
                 startActivity(new Intent(this, CustomDialogActivity.class));
+                break;
+            case 26:
+                Observable.timer(3000, TimeUnit.MILLISECONDS).subscribe(new Consumer<Long>() {
+                    @Override
+                    public void accept(Long aLong) throws Exception {
+                        startActivity(new Intent(MainActivity.this, PrepareActivity.class));
+                    }
+                });
+                break;
+            case 27:
+                startActivity(new Intent(this, EditTextKeyboaedActivity.class));
+                break;
+            case 28:
+                startActivity(new Intent(this, AIDLActivity.class));
+                break;
+            case 29:
+                startActivity(new Intent(this, MessengeActivity.class));
+                break;
+            case 30:
+                startActivity(new Intent(this, ProviderActivity.class));
                 break;
         }
     }

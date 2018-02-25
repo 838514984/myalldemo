@@ -30,6 +30,7 @@ public abstract class BaseActivity extends FragmentActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        MyApplication.ACTIVITYS.add(this);
         getWindow().requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS);
         StatusBarUtil.immersive(this);
 
@@ -54,4 +55,10 @@ public abstract class BaseActivity extends FragmentActivity {
     }
 
     protected  abstract int getLayoutId();
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        MyApplication.ACTIVITYS.remove(this);
+    }
 }

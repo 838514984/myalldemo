@@ -8,6 +8,6 @@ import android.util.Log;
 
 public class Logger {
     public static void error(String msg){
-        Log.e("xxx",msg);
+        Log.e("mylog",msg);
     }
 }

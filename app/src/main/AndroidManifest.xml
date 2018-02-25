@@ -14,6 +14,8 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <!-- 注意这里有一个android:icon:"xxxx" 省略，然后下面用了融合节点node，这就表示用了低优先级的manifest中的icon，具体的merg 详情点击左下角的merg manifest -->
     <application
@@ -41,7 +43,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".testRelativeoutPaddingValueable.FrameLayoutContainerpadding30dp" />
-        <activity android:name=".testRelativeoutPaddingValueable.RelativeLayoutpadding30dp" />
+        <activity
+            android:name=".testRelativeoutPaddingValueable.RelativeLayoutpadding30dp"
+            android:process=":remote" />
         <activity android:name=".testStatusBar.TestStatusBar" />
         <activity android:name=".rxbinding.RxBinDingActivity" />
         <activity android:name=".rxJava.TestRxJavaActivity" />
@@ -100,7 +104,50 @@
         <activity android:name=".webviewTest.WebViewAndJsInvokeMethodActivity" />
         <activity android:name=".customAnnotationTest.myAnnotation.CustomAnnotationActivity" />
         <activity android:name=".learn.recyclerview.RcrviewSwipeDismissActivity" />
-        <activity android:name=".customdialog.CustomDialogActivity"></activity>
+        <activity android:name=".customdialog.CustomDialogActivity" />
+        <activity android:name=".alarmwhenlocked.PrepareActivity" />
+        <activity
+            android:name=".alarmwhenlocked.LockActivity"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Wallpaper.NoTitleBar" />
+
+        <service
+            android:name=".alarmwhenlocked.LockService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".edittextKeyboardAction.EditTextKeyboaedActivity" />
+
+        <receiver android:name=".batterybroadcastrev.MyReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_CHANGED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".aidl.AidlService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".aidl.AIDLActivity"
+            android:process=":aidl" />
+
+        <service
+            android:name=".aidl.MessengeService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote" />
+
+        <activity android:name=".aidl.MessengeActivity" />
+
+        <provider
+            android:name=".provider.ProviderMy"
+            android:authorities="cn.leslielee.provider" />
+
+        <activity android:name=".provider.ProviderActivity"></activity>
     </application>
 
 </manifest>
