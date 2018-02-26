@@ -12,7 +12,6 @@ import android.widget.TextView;
 import com.example.administrator.mytestallhere.BaseActivity;
 import com.example.administrator.mytestallhere.MainActivity;
 import com.example.administrator.mytestallhere.R;
-import com.squareup.haha.perflib.Main;
 
 import java.util.ArrayList;
 import java.util.List;

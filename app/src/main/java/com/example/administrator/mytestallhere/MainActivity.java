@@ -51,6 +51,9 @@ import com.example.administrator.mytestallhere.testStatusBar.TestStatusBar;
 import com.example.administrator.mytestallhere.testmaterial_calendarview.MaterialCalendarViewActivity;
 import com.example.administrator.mytestallhere.time_data_orotherpicker.TestPickActivity;
 import com.example.administrator.mytestallhere.util.Logger;
+import com.example.administrator.mytestallhere.view.CircleView;
+import com.example.administrator.mytestallhere.view.CircleViewActivity;
+import com.example.administrator.mytestallhere.view.ViewMoveActivity;
 import com.example.administrator.mytestallhere.viewpagerTest.ViewPagerActivity;
 import com.example.administrator.mytestallhere.webviewTest.WebViewAndJsInvokeMethodActivity;
 import com.example.administrator.mytestallhere.webviewTest.WebViewTestActivity;
@@ -99,6 +102,8 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         add("AIDL Test");
         add("Messenge Test");
         add("Provider");
+        add("moveView");
+        add("circleViewActivity");
     }};
 
     @Override
@@ -270,6 +275,12 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 break;
             case 30:
                 startActivity(new Intent(this, ProviderActivity.class));
+                break;
+            case 31:
+                startActivity(new Intent(this, ViewMoveActivity.class));
+                break;
+            case 32:
+                startActivity(new Intent(this, CircleViewActivity.class));
                 break;
         }
     }

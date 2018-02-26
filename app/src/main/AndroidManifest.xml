@@ -147,7 +147,9 @@
             android:name=".provider.ProviderMy"
             android:authorities="cn.leslielee.provider" />
 
-        <activity android:name=".provider.ProviderActivity"></activity>
+        <activity android:name=".provider.ProviderActivity" />
+        <activity android:name=".view.ViewMoveActivity" />
+        <activity android:name=".view.CircleViewActivity"></activity>
     </application>
 
 </manifest>

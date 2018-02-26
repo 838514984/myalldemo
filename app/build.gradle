@@ -187,9 +187,9 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.8.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.0'
-    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.2'
-    myrayDebugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.2'
-    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.2'
+   // debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.2'
+    //myrayDebugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.2'
+    //releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.2'
 }
 
 

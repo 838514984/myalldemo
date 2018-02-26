@@ -6,7 +6,7 @@ import android.os.Process;
 import android.widget.Toast;
 
 import com.example.administrator.mytestallhere.util.Logger;
-import com.squareup.leakcanary.LeakCanary;
+
 
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
@@ -27,8 +27,8 @@ public class MyApplication extends Application {
         super.onCreate();
         INSTANCE = this;
         Logger.error("Thread name: "+Thread.currentThread().getName()+" ,pid: "+ Process.myPid());
-        if (LeakCanary.isInAnalyzerProcess(this))
-            return;
+//        if (LeakCanary.isInAnalyzerProcess(this))
+//            return;
        // LeakCanary.install(this);
 
 //        Observable.interval(3000, TimeUnit.MILLISECONDS).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<Long>() {
