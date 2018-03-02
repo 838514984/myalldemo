@@ -16,6 +16,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 
     <!-- 注意这里有一个android:icon:"xxxx" 省略，然后下面用了融合节点node，这就表示用了低优先级的manifest中的icon，具体的merg 详情点击左下角的merg manifest -->
     <application
@@ -149,7 +150,10 @@
 
         <activity android:name=".provider.ProviderActivity" />
         <activity android:name=".view.ViewMoveActivity" />
-        <activity android:name=".view.CircleViewActivity"></activity>
+        <activity android:name=".view.CircleViewActivity" />
+        <activity android:name=".remoteView.CustomNotificationActivity" />
+        <activity android:name=".animation.AnimationActivity" />
+        <activity android:name=".window.windowManager.AddWindowActivity"></activity>
     </application>
 
 </manifest>

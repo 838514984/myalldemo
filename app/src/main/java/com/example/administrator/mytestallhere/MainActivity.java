@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
@@ -28,6 +29,7 @@ import com.example.administrator.mytestallhere.aidl.AIDLActivity;
 import com.example.administrator.mytestallhere.aidl.MessengeActivity;
 import com.example.administrator.mytestallhere.aidl.MessengeService;
 import com.example.administrator.mytestallhere.alarmwhenlocked.PrepareActivity;
+import com.example.administrator.mytestallhere.animation.AnimationActivity;
 import com.example.administrator.mytestallhere.buildConfigTest.BuildConfigActivity;
 import com.example.administrator.mytestallhere.butterknife.ButterKnifeActivity;
 import com.example.administrator.mytestallhere.cameraTest.CameraPreViewTestActivity;
@@ -40,6 +42,7 @@ import com.example.administrator.mytestallhere.memoryleak.MemoryActivityTest;
 import com.example.administrator.mytestallhere.multiApksBuildTest.MuiltyApksbuildTestActivity;
 import com.example.administrator.mytestallhere.myJecenterDependence.MyJecenterDependence;
 import com.example.administrator.mytestallhere.provider.ProviderActivity;
+import com.example.administrator.mytestallhere.remoteView.CustomNotificationActivity;
 import com.example.administrator.mytestallhere.rxJava.TestRxJavaActivity;
 import com.example.administrator.mytestallhere.rxbinding.RxBinDingActivity;
 import com.example.administrator.mytestallhere.selectImgAndCrop.SelectImgAndCropActivity;
@@ -58,6 +61,7 @@ import com.example.administrator.mytestallhere.viewpagerTest.ViewPagerActivity;
 import com.example.administrator.mytestallhere.webviewTest.WebViewAndJsInvokeMethodActivity;
 import com.example.administrator.mytestallhere.webviewTest.WebViewTestActivity;
 import com.example.administrator.mytestallhere.webviewTest.WebViewVideoActivity;
+import com.example.administrator.mytestallhere.window.windowManager.AddWindowActivity;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.util.ArrayList;
@@ -104,6 +108,9 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         add("Provider");
         add("moveView");
         add("circleViewActivity");
+        add("CustomNotification");
+        add("Animation");
+        add("addWindow");
     }};
 
     @Override
@@ -281,6 +288,16 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 break;
             case 32:
                 startActivity(new Intent(this, CircleViewActivity.class));
+                break;
+            case 33:
+                startActivity(new Intent(this, CustomNotificationActivity.class));
+                break;
+            case 34:
+                startActivity(new Intent(this, AnimationActivity.class));
+                overridePendingTransition(R.anim.enteranim,R.anim.exitanim);
+                break;
+            case 35:
+                startActivity(new Intent(this, AddWindowActivity.class));
                 break;
         }
     }
