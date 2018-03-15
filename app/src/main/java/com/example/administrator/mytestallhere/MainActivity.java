@@ -2,41 +2,32 @@ package com.example.administrator.mytestallhere;
 
 import android.Manifest;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.target.SimpleTarget;
-import com.bumptech.glide.request.transition.Transition;
 import com.example.administrator.mytestallhere.TransitionsTest.activityTransitionTest.ActivityAAA;
 import com.example.administrator.mytestallhere.TransitionsTest.activityTransitionTest.ControllerActivity;
 import com.example.administrator.mytestallhere.TransitionsTest.activityTransitionTest.TransitionManagerActivity;
 import com.example.administrator.mytestallhere.aidl.AIDLActivity;
 import com.example.administrator.mytestallhere.aidl.MessengeActivity;
-import com.example.administrator.mytestallhere.aidl.MessengeService;
 import com.example.administrator.mytestallhere.alarmwhenlocked.PrepareActivity;
 import com.example.administrator.mytestallhere.animation.AnimationActivity;
+import com.example.administrator.mytestallhere.annotationTest.Annotation.AnnotationActivity;
 import com.example.administrator.mytestallhere.buildConfigTest.BuildConfigActivity;
 import com.example.administrator.mytestallhere.butterknife.ButterKnifeActivity;
 import com.example.administrator.mytestallhere.cameraTest.CameraPreViewTestActivity;
-import com.example.administrator.mytestallhere.customAnnotationTest.myAnnotation.CustomAnnotationActivity;
 import com.example.administrator.mytestallhere.customdialog.CustomDialogActivity;
 import com.example.administrator.mytestallhere.edittextKeyboardAction.EditTextKeyboaedActivity;
 import com.example.administrator.mytestallhere.glideGetBitmap.GlideGetBitmapActivity;
+import com.example.administrator.mytestallhere.http.okhttptest.OkHttpActivity;
+import com.example.administrator.mytestallhere.http.retrofit.RetrofitRxjavaActivity;
 import com.example.administrator.mytestallhere.learn.recyclerview.RcrviewSwipeDismissActivity;
 import com.example.administrator.mytestallhere.memoryleak.MemoryActivityTest;
 import com.example.administrator.mytestallhere.multiApksBuildTest.MuiltyApksbuildTestActivity;
@@ -47,14 +38,12 @@ import com.example.administrator.mytestallhere.rxJava.TestRxJavaActivity;
 import com.example.administrator.mytestallhere.rxbinding.RxBinDingActivity;
 import com.example.administrator.mytestallhere.selectImgAndCrop.SelectImgAndCropActivity;
 import com.example.administrator.mytestallhere.startActivityFromBrowseTest.StartActivityFromBrowse;
-import com.example.administrator.mytestallhere.statusutil.StatusBarUtil;
 import com.example.administrator.mytestallhere.testDependences.DependencesActivity;
 import com.example.administrator.mytestallhere.testRelativeoutPaddingValueable.RelativeLayoutpadding30dp;
 import com.example.administrator.mytestallhere.testStatusBar.TestStatusBar;
 import com.example.administrator.mytestallhere.testmaterial_calendarview.MaterialCalendarViewActivity;
 import com.example.administrator.mytestallhere.time_data_orotherpicker.TestPickActivity;
 import com.example.administrator.mytestallhere.util.Logger;
-import com.example.administrator.mytestallhere.view.CircleView;
 import com.example.administrator.mytestallhere.view.CircleViewActivity;
 import com.example.administrator.mytestallhere.view.ViewMoveActivity;
 import com.example.administrator.mytestallhere.viewpagerTest.ViewPagerActivity;
@@ -111,6 +100,8 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         add("CustomNotification");
         add("Animation");
         add("addWindow");
+        add("retrofit&Rxjava");
+        add("okhttptest");
     }};
 
     @Override
@@ -255,7 +246,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 startActivity(new Intent(this, WebViewAndJsInvokeMethodActivity.class));
                 break;
             case 23:
-                startActivity(new Intent(this, CustomAnnotationActivity.class));
+                startActivity(new Intent(this, AnnotationActivity.class));
                 break;
             case 24:
                 startActivity(new Intent(this,RcrviewSwipeDismissActivity.class));
@@ -298,6 +289,12 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 break;
             case 35:
                 startActivity(new Intent(this, AddWindowActivity.class));
+                break;
+            case 36:
+                startActivity(new Intent(this, RetrofitRxjavaActivity.class));
+                break;
+            case 37:
+                startActivity(new Intent(this, OkHttpActivity.class));
                 break;
         }
     }

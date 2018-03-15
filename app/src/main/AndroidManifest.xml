@@ -16,7 +16,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <!-- 注意这里有一个android:icon:"xxxx" 省略，然后下面用了融合节点node，这就表示用了低优先级的manifest中的icon，具体的merg 详情点击左下角的merg manifest -->
     <application
@@ -103,7 +103,7 @@
             android:name=".webviewTest.WebViewVideoActivity"
             android:hardwareAccelerated="true" />
         <activity android:name=".webviewTest.WebViewAndJsInvokeMethodActivity" />
-        <activity android:name=".customAnnotationTest.myAnnotation.CustomAnnotationActivity" />
+        <activity android:name=".customAnnotationTest.Annotation.CustomAnnotationActivity" />
         <activity android:name=".learn.recyclerview.RcrviewSwipeDismissActivity" />
         <activity android:name=".customdialog.CustomDialogActivity" />
         <activity android:name=".alarmwhenlocked.PrepareActivity" />
@@ -153,7 +153,11 @@
         <activity android:name=".view.CircleViewActivity" />
         <activity android:name=".remoteView.CustomNotificationActivity" />
         <activity android:name=".animation.AnimationActivity" />
-        <activity android:name=".window.windowManager.AddWindowActivity"></activity>
+        <activity android:name=".window.windowManager.AddWindowActivity" />
+        <activity android:name=".http.retrofit.RetrofitActivity" />
+        <activity android:name=".http.retrofit.NgariOldStyleHttpRequestActivity" />
+        <activity android:name=".http.retrofit.RetrofitRxjavaActivity" />
+        <activity android:name=".http.okhttptest.OkHttpActivity"></activity>
     </application>
 
 </manifest>

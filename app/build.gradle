@@ -17,6 +17,14 @@ afterEvaluate {
     println '******************* this is the msg from afterEvaluate'
 }
 android {
+    packagingOptions {
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/MANIFEST.MF'
+    }
     signingConfigs {
         config {
             keyPassword '2332apple'
@@ -184,12 +192,12 @@ dependencies {
     compile project(':mylibrary')
     //内存泄露
     //这种写法必须在configurations下面定义！！
+    // debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.2'
+    //myrayDebugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.2'
+    //releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.2'
     compile 'com.jakewharton:butterknife:8.8.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.0'
-   // debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.2'
-    //myrayDebugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.2'
-    //releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.2'
 }
 
 

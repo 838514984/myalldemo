@@ -1,4 +1,4 @@
-include ':app', ':mylibrary', ':mysublib', ':mythirdlib', ':secretbaselibrary'
+include ':app', ':mylibrary', ':mysublib', ':mythirdlib', ':secretbaselibrary', ':javatest'
 
 println 'Home Die: ' + gradle.gradleHomeDir
 println 'UserHomeDir: ' + gradle.gradleUserHomeDir

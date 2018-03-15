@@ -1,26 +1,27 @@
 package com.example.administrator.mytestallhere.window.windowManager;
 
 import android.app.Activity;
-import android.app.ActivityThread;
+
 import android.app.Dialog;
-import android.app.NotificationManager;
+
 import android.content.Context;
 import android.graphics.PixelFormat;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
+
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewRootImpl;
+
 import android.view.WindowManager;
-import android.view.WindowManagerImpl;
+
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.android.internal.policy.PhoneWindow;
+
 import com.example.administrator.mytestallhere.MyApplication;
 import com.example.administrator.mytestallhere.R;
+
 
 public class AddWindowActivity extends Activity {
     WindowManager mWindowManager;
@@ -30,21 +31,16 @@ public class AddWindowActivity extends Activity {
     int mLastY;
 
     private void blank() {
-        WindowManagerImpl windowManager = null;
-        ViewRootImpl viewRootImpl = null;
-        PhoneWindow phoneWindow = null;
-        Dialog dialog = null;
-        ActivityThread activityThread = null;
-        activityThread.getApplication();
+
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_window);
-        PhoneWindow phoneWindow = new PhoneWindow(this);
-        phoneWindow.setContentView(R.layout.activity_circle_view);
-        addContentView(phoneWindow.getDecorView(), new ViewGroup.LayoutParams(200, 200));
+//        PhoneWindow phoneWindow = new PhoneWindow(this);
+//        phoneWindow.setContentView(R.layout.activity_circle_view);
+//        addContentView(phoneWindow.getDecorView(), new ViewGroup.LayoutParams(200, 200));
         mButton = new Button(this);
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
