@@ -3,19 +3,27 @@
     android:id="@+id/ll_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/iv"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp" />
+        android:layout_height="200dp">
+        <View
+            android:id="@+id/rl_paltte"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:textSize="@dimen/textsize_30"/>
+        android:textSize="@dimen/textsize_30" />
 
     <TextView
         android:id="@+id/tv_content"

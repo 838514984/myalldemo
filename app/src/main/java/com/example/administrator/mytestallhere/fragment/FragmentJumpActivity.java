@@ -66,7 +66,7 @@ public class FragmentJumpActivity extends AppCompatActivity implements View.OnCl
         detailShareFragment.setSharedElementEnterTransition(TransitionInflater.from(this).inflateTransition(android.R.transition.move));
         detailShareFragment.setSharedElementReturnTransition(TransitionInflater.from(this).inflateTransition(android.R.transition.move));
         Bundle bundle = new Bundle();
-        bundle.putInt("src", R.mipmap.back_main_banner_empty);
+        bundle.putInt("src", R.mipmap.two);
         bundle.putString("title", "this is title");
         bundle.putString("content", "this is the " + (position + 1) + " item");
         detailShareFragment.setArguments(bundle);

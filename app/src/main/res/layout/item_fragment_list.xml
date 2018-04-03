@@ -24,7 +24,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:scaleType="centerCrop"
-                android:src="@mipmap/back_main_banner_empty" />
+                android:src="@mipmap/two" />
 
             <LinearLayout
                 android:layout_width="match_parent"

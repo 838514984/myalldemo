@@ -1,11 +1,12 @@
 package com.example.administrator.mytestallhere.fragment;
 
 import android.content.Context;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.transition.Fade;
+import android.support.v7.graphics.Palette;
 import android.transition.TransitionInflater;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,8 +25,9 @@ public class DetailShareFragment extends Fragment {
     ImageView mIv;
     TextView mTvTitle;
     TextView mTvContent;
-    String title;
-    String content;
+    String mTitle;
+    String mContent;
+    View mPalette;
     int src;
 
     @Override
@@ -39,8 +41,8 @@ public class DetailShareFragment extends Fragment {
         super.onCreate(savedInstanceState);
         Bundle argument = getArguments();
         src = argument.getInt("src");
-        title = argument.getString("title");
-        content = argument.getString("content");
+        mTitle = argument.getString("title");
+        mContent = argument.getString("content");
         setSharedElementEnterTransition(TransitionInflater.from(getContext()).inflateTransition(android.R.transition.move));
         setSharedElementReturnTransition(TransitionInflater.from(getContext()).inflateTransition(android.R.transition.move));
         //setEnterTransition(new Fade());
@@ -62,12 +64,35 @@ public class DetailShareFragment extends Fragment {
         mTvTitle = (TextView) mContentView.findViewById(R.id.tv_title);
         mTvContent = (TextView) mContentView.findViewById(R.id.tv_content);
         mIv.setImageResource(src);
-        mTvContent.setText(content);
-        mTvTitle.setText(title);
+        mTvContent.setText(mContent);
+        mTvTitle.setText(mTitle);
+        mPalette = mContentView.findViewById(R.id.rl_paltte);
+        setPalette();
         setTransitionName();
         return mContentView;
     }
 
+    private void setPalette() {
+        BitmapDrawable drawable = (BitmapDrawable) mIv.getDrawable();
+//        Bitmap bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(),drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+//        Canvas canvas = new Canvas(bitmap);
+//        drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
+//        drawable.draw(canvas);
+        Palette.Builder builder=Palette.from(drawable.getBitmap());
+        builder.generate(new Palette.PaletteAsyncListener() {
+            @Override
+            public void onGenerated(Palette palette) {
+                Palette.Swatch swatch = palette.getMutedSwatch();
+                mPalette.setBackgroundColor(swatch.getRgb());
+                backGroundFade();
+            }
+        });
+    }
+
+    public void backGroundFade(){
+        mPalette.setAlpha(0);
+        mPalette.animate().alpha(1).setDuration(3000).start();
+    }
 
     private void setTransitionName() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {

@@ -5,9 +5,7 @@ buildscript {
     repositories {
         jcenter()
         mavenCentral()
-        maven{
-            url "http://repo.mycompany.com/maven2"
-        }
+        maven{url "http://repo.mycompany.com/maven2"}
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.0'
@@ -29,9 +27,14 @@ allprojects {
 
     repositories {
         jcenter()
+        //fix glide
+        //Failed to resolve com.android.support:support-annotations 26.0.1
+        //maven { url "https://maven.google.com"}
+       // maven { url "https://dl.google.com/dl/android/maven2/"}
     }
 
 }
+
 
 subprojects{
     println '------------- sub projects: '+project.name
