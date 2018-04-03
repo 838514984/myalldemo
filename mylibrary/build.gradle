@@ -57,5 +57,6 @@ dependencies {
     compile 'com.secretbase:secretbaselibrary:1.1.3'
     //recyclerview
     compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'com.android.support:cardview-v7:25.2.0'
 
 }

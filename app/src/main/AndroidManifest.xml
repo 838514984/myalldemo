@@ -157,7 +157,8 @@
         <activity android:name=".http.retrofit.RetrofitActivity" />
         <activity android:name=".http.retrofit.NgariOldStyleHttpRequestActivity" />
         <activity android:name=".http.retrofit.RetrofitRxjavaActivity" />
-        <activity android:name=".http.okhttptest.OkHttpActivity"></activity>
+        <activity android:name=".http.okhttptest.OkHttpActivity" />
+        <activity android:name=".fragment.FragmentJumpActivity"></activity>
     </application>
 
 </manifest>

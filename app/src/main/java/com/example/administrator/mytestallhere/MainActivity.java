@@ -25,6 +25,7 @@ import com.example.administrator.mytestallhere.butterknife.ButterKnifeActivity;
 import com.example.administrator.mytestallhere.cameraTest.CameraPreViewTestActivity;
 import com.example.administrator.mytestallhere.customdialog.CustomDialogActivity;
 import com.example.administrator.mytestallhere.edittextKeyboardAction.EditTextKeyboaedActivity;
+import com.example.administrator.mytestallhere.fragment.FragmentJumpActivity;
 import com.example.administrator.mytestallhere.glideGetBitmap.GlideGetBitmapActivity;
 import com.example.administrator.mytestallhere.http.okhttptest.OkHttpActivity;
 import com.example.administrator.mytestallhere.http.retrofit.RetrofitRxjavaActivity;
@@ -102,6 +103,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         add("addWindow");
         add("retrofit&Rxjava");
         add("okhttptest");
+        add("fragment jump");
     }};
 
     @Override
@@ -295,6 +297,9 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 break;
             case 37:
                 startActivity(new Intent(this, OkHttpActivity.class));
+                break;
+            case 38:
+                startActivity(new Intent(this, FragmentJumpActivity.class));
                 break;
         }
     }
