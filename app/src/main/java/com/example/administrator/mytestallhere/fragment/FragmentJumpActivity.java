@@ -1,6 +1,7 @@
 package com.example.administrator.mytestallhere.fragment;
 
 import android.os.Build;
+import android.renderscript.ScriptIntrinsicBlur;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;

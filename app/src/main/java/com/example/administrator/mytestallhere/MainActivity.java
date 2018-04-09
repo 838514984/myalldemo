@@ -43,6 +43,7 @@ import com.example.administrator.mytestallhere.testDependences.DependencesActivi
 import com.example.administrator.mytestallhere.testRelativeoutPaddingValueable.RelativeLayoutpadding30dp;
 import com.example.administrator.mytestallhere.testStatusBar.TestStatusBar;
 import com.example.administrator.mytestallhere.testmaterial_calendarview.MaterialCalendarViewActivity;
+import com.example.administrator.mytestallhere.themeswitch.ThemeSwitchActivity;
 import com.example.administrator.mytestallhere.time_data_orotherpicker.TestPickActivity;
 import com.example.administrator.mytestallhere.util.Logger;
 import com.example.administrator.mytestallhere.view.CircleViewActivity;
@@ -104,6 +105,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         add("retrofit&Rxjava");
         add("okhttptest");
         add("fragment jump");
+        add("switch theme");
     }};
 
     @Override
@@ -300,6 +302,9 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 break;
             case 38:
                 startActivity(new Intent(this, FragmentJumpActivity.class));
+                break;
+            case 39:
+                startActivity(new Intent(this, ThemeSwitchActivity.class));
                 break;
         }
     }
