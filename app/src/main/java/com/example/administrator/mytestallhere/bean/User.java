@@ -12,6 +12,9 @@ import java.io.Serializable;
 public class User implements Parcelable{
     public String name;
     public int age;
+    public String[] favorites;
+    public String[] viewhistories;
+
     public User(){
 
     }

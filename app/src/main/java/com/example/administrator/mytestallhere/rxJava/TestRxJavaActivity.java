@@ -3,6 +3,7 @@ package com.example.administrator.mytestallhere.rxJava;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import com.example.administrator.mytestallhere.BaseActivity;
 import com.example.administrator.mytestallhere.R;
@@ -20,17 +21,20 @@ import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.Observer;
+import io.reactivex.Scheduler;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
+import io.reactivex.functions.Predicate;
+import io.reactivex.schedulers.Schedulers;
 
-public class TestRxJavaActivity extends BaseActivity {
+public class TestRxJavaActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        findViewById(R.id.btn_filt).setOnClickListener(this);
         //计时器
         //testTimer();
         //period count
@@ -160,4 +164,23 @@ public class TestRxJavaActivity extends BaseActivity {
     public static void LogE(String msg) {
         Log.e("xxx", msg);
     }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.btn_filt){
+
+        }
+    }
+
+    private void rxFilt(){
+//        int[] ints = new int[]{1,2,3,4,5,6,7,8,9,10};
+//        Flowable.fromArray(ints)
+//                .filter(new Predicate<int[]>() {
+//                    @Override
+//                    public boolean test(int[] ints) throws Exception {
+//                        return false;
+//                    }
+//                })
+    }
+
 }
