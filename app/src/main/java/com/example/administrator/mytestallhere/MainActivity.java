@@ -32,6 +32,7 @@ import com.example.administrator.mytestallhere.http.retrofit.RetrofitRxjavaActiv
 import com.example.administrator.mytestallhere.learn.recyclerview.RcrviewSwipeDismissActivity;
 import com.example.administrator.mytestallhere.memoryleak.MemoryActivityTest;
 import com.example.administrator.mytestallhere.multiApksBuildTest.MuiltyApksbuildTestActivity;
+import com.example.administrator.mytestallhere.mvpDemo.MVPLoginActivity;
 import com.example.administrator.mytestallhere.myJecenterDependence.MyJecenterDependence;
 import com.example.administrator.mytestallhere.provider.ProviderActivity;
 import com.example.administrator.mytestallhere.remoteView.CustomNotificationActivity;
@@ -106,6 +107,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         add("okhttptest");
         add("fragment jump");
         add("switch theme");
+        add("MVPLogin test");
     }};
 
     @Override
@@ -305,6 +307,9 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 break;
             case 39:
                 startActivity(new Intent(this, ThemeSwitchActivity.class));
+                break;
+            case 40:
+                startActivity(new Intent(this, MVPLoginActivity.class));
                 break;
         }
     }

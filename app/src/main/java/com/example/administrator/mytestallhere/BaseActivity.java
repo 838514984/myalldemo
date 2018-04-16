@@ -1,33 +1,29 @@
 package com.example.administrator.mytestallhere;
 
-import android.Manifest;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.widget.Toast;
 
+import com.example.administrator.mytestallhere.mvpDemo.present.BasePresent;
 import com.example.administrator.mytestallhere.statusutil.StatusBarUtil;
-import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.reactivex.functions.Consumer;
 
 /**
  * Created by Administrator on 2017/8/24 0024.
  */
 
-public abstract class BaseActivity<T> extends AppCompatActivity {
-    T mPresent;
+public abstract class BaseActivity<T extends BasePresent> extends AppCompatActivity {
+    public T mPresent;
     View rootView;
     @Nullable
     @BindView(R.id.immersiveView)
     View immersiveView;
+    ViewGroup mRootView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,7 +32,9 @@ public abstract class BaseActivity<T> extends AppCompatActivity {
         getWindow().requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS);
         StatusBarUtil.immersive(this);
         setContentView(getLayoutId());
-        initPresent();
+        mRootView = (ViewGroup) findViewById(android.R.id.content);
+        StatusBarUtil.setPaddingSmart(this,mRootView.getChildAt(0));
+        mPresent = initPresent();
         ButterKnife.bind(this);
         if (immersiveView != null)
             StatusBarUtil.setPaddingSmart(this, immersiveView);

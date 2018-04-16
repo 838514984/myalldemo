@@ -159,8 +159,10 @@
         <activity android:name=".http.retrofit.RetrofitRxjavaActivity" />
         <activity android:name=".http.okhttptest.OkHttpActivity" />
         <activity android:name=".fragment.FragmentJumpActivity" />
-        <activity android:name=".themeswitch.ThemeSwitchActivity"
-            android:theme="@style/Base.Theme.AppCompat"></activity>
+        <activity
+            android:name=".themeswitch.ThemeSwitchActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity android:name=".mvpDemo.MVPLoginActivity"></activity>
     </application>
 
 </manifest>
