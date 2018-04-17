@@ -11,7 +11,6 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
-import sun.rmi.runtime.Log;
 
 public class MyClass {
     int vaule = 20;
