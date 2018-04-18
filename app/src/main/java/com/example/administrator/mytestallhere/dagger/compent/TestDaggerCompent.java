@@ -1,6 +1,6 @@
 package com.example.administrator.mytestallhere.dagger.compent;
 
-import com.example.administrator.mytestallhere.dagger.bean.TestDagger;
+import com.example.administrator.mytestallhere.dagger.testdagger.TestDagger;
 import com.example.administrator.mytestallhere.dagger.module.GirlFriendModule;
 import com.example.administrator.mytestallhere.dagger.module.GoodFriendModule;
 

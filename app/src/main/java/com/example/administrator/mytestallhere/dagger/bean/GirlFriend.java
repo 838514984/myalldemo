@@ -10,7 +10,7 @@ import javax.inject.Inject;
  */
 
 public class GirlFriend {
-    Person whios;
+    public Person whios;
 
     //@Inject
     public GirlFriend() {
