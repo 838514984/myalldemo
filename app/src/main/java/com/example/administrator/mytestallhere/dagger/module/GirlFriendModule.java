@@ -19,17 +19,17 @@ public class GirlFriendModule {
         this.person = person;
     }
 
-//    @Provides
-//    public Person providePerson() {
-//        return this.person;
-//    }
+    @Provides
+    public Person providePerson() {
+        return this.person;
+    }
 
     /**
-     *  因为最后是要提供一个这个，所以要这样做，不然报错，这样bean里面构造参数就不需要@Inject注解
+     *  如果上面没有提供对象，那么会到Person的构造方法看是否有@Inject注解，有就实例化，灭有就报错
      * @return
      */
     @Provides
-    public GirlFriend provideGirlFriend(){
-        return new GirlFriend(this.person);
+    public GirlFriend provideGirlFriend(Person person){
+        return new GirlFriend(person);
     }
 }

@@ -11,7 +11,8 @@ import javax.inject.Inject;
 public class Product {
     public String name;
     public Person person;
-    @Inject
+
+    @Inject //会找Person构造方法寻找@Inject
     public Product(Person person) {
         this.person = person;
         name = "2332";

@@ -27,7 +27,7 @@ public class TestDagger {
         //DaggerGirlFrientCompent.create().inject(this);
         //只能inject一个！！！
         DaggerTestDaggerCompent.builder()
-                .girlFriendModule(new GirlFriendModule(new Person("ln",25)))
+                .girlFriendModule(new GirlFriendModule(new Person("2332",25)))
                 .goodFriendModule(new GoodFriendModule("caiwei",23))
                 .build()
                 .inject(this);

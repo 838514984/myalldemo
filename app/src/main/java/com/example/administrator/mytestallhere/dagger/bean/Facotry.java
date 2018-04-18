@@ -9,7 +9,7 @@ import javax.inject.Inject;
 public class Facotry {
     public Product product;
 
-    @Inject
+    @Inject //会找Product构造方法@inject注解
     public Facotry(Product product) {
         this.product = product;
     }

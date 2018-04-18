@@ -20,20 +20,20 @@ public class GoodFriendModule {
         //this.person = new Person(name, age);
     }
 
-//    @Provides
-//    public String provideName() {
-//        return this.name;
-//    }
-//
-//    @Provides
-//    public int provideAge() {
-//        return this.age;
-//    }
+    @Provides
+    public String provideName() {
+        return this.name;
+    }
+
+    @Provides
+    public int provideAge() {
+        return this.age;
+    }
 
 
 
     @Provides
-    public GoodFriend provideGoodfriend() {
+    public GoodFriend provideGoodfriend(String name,int age) {
         return new GoodFriend(name,age);
     }
 
