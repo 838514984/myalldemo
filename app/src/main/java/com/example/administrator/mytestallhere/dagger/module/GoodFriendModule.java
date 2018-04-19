@@ -2,6 +2,8 @@ package com.example.administrator.mytestallhere.dagger.module;
 
 import com.example.administrator.mytestallhere.dagger.bean.GoodFriend;
 
+import javax.inject.Named;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -31,11 +33,9 @@ public class GoodFriendModule {
     }
 
 
-
     @Provides
-    public GoodFriend provideGoodfriend(String name,int age) {
-        return new GoodFriend(name,age);
+    public GoodFriend provideGoodfriend(String name, int age) {
+        return new GoodFriend(name, age);
     }
-
 
 }

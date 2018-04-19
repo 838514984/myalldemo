@@ -12,6 +12,7 @@ import com.example.administrator.mytestallhere.dagger.module.GirlFriendModule;
 import com.example.administrator.mytestallhere.dagger.module.GoodFriendModule;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 /**
  * Created by Administrator on 2018/4/18 0018.
@@ -20,17 +21,29 @@ import javax.inject.Inject;
 public class TestDependce {
     @Inject
     GirlFriend girlFriend;
+
+    @Inject
     GoodFriend goodFriend;
-    public static void main(String[] args){
+
+    @Inject
+    GoodFriend goodFriend2;
+
+    public static void main(String[] args) {
         TestDependce testDependceCompent = new TestDependce();
-        ProviderGirlCompent providerGirlCompent = DaggerProviderGirlCompent
-                .builder()
-                .girlFriendModule(new GirlFriendModule(new Person("2332",25)))
-                .build();
+        ProviderGirlCompent providerGirlCompent = getProviderGirlCompent();
         DaggerTestDependenceCompent.builder().providerGirlCompent(providerGirlCompent)
                 .build()
                 .inject(testDependceCompent);
         System.out.println(testDependceCompent.girlFriend.whios.name);
-        //System.out.println(testDependceCompent.goodFriend.name);
+        System.out.println(testDependceCompent.goodFriend.name);
+        System.out.println(testDependceCompent.goodFriend2.name);
+    }
+
+    public static ProviderGirlCompent getProviderGirlCompent() {
+        return DaggerProviderGirlCompent
+                .builder()
+                .girlFriendModule(new GirlFriendModule(new Person("2332", 25)))
+                .goodFriendModule(new GoodFriendModule("ln", 25))
+                .build();
     }
 }

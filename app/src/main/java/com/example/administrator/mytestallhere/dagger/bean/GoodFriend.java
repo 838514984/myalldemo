@@ -22,4 +22,6 @@ public class GoodFriend  {
         this.age = age;
         this.name = name;
     }
+
+
 }
