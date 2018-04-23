@@ -34,6 +34,7 @@ import com.example.administrator.mytestallhere.memoryleak.MemoryActivityTest;
 import com.example.administrator.mytestallhere.multiApksBuildTest.MuiltyApksbuildTestActivity;
 import com.example.administrator.mytestallhere.mvpDemo.MVPLoginActivity;
 import com.example.administrator.mytestallhere.myJecenterDependence.MyJecenterDependence;
+import com.example.administrator.mytestallhere.placeholderview.PlaceholderViewActivityList;
 import com.example.administrator.mytestallhere.provider.ProviderActivity;
 import com.example.administrator.mytestallhere.remoteView.CustomNotificationActivity;
 import com.example.administrator.mytestallhere.rxJava.TestRxJavaActivity;
@@ -108,6 +109,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         add("fragment jump");
         add("switch theme");
         add("MVPLogin test");
+        add("place holder view");
     }};
 
     @Override
@@ -310,6 +312,9 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 break;
             case 40:
                 startActivity(new Intent(this, MVPLoginActivity.class));
+                break;
+            case 41:
+                startActivity(new Intent(this, PlaceholderViewActivityList.class));
                 break;
         }
     }

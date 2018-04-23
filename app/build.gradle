@@ -71,7 +71,7 @@ android {
             buildConfigField "String", "MyBuild", "\"debug buildConfigFields\""
             resValue "string", "buildTime", "1"
             resValue "string", "app_name", "TestAlldebug"
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //第三方开源有的还要自己添加规则，那么还是不用了先 proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
         }
 
@@ -195,14 +195,25 @@ dependencies {
     // debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.2'
     //myrayDebugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.2'
     //releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.2'
-    compile 'com.jakewharton:butterknife:8.8.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.0'
 
     //Dagger
-    compile 'com.google.dagger:dagger:2.4'
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.4'
 
+    //recyclerview
+    
+
+//    compile 'com.squareup:javapoet:1.10.0'
+//    compile 'com.mindorks.android:placeholderview:1.0.2'
+//    annotationProcessor ('com.mindorks.android:placeholderview-compiler:1.0.2'){
+//        exclude group: 'com.squareup:javapoet'
+//    }
+    compile 'com.jakewharton:butterknife:8.8.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.google.dagger:dagger:2.4'
+    compile 'com.android.support:recyclerview-v7:25.4.0'
+    //placeholdview
+    compile 'com.mindorks:placeholderview:0.7.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.0'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.4'
 }
 
 

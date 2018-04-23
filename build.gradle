@@ -30,8 +30,8 @@ allprojects {
         jcenter()
         //fix glide
         //Failed to resolve com.android.support:support-annotations 26.0.1
-        //maven { url "https://maven.google.com"}
-       // maven { url "https://dl.google.com/dl/android/maven2/"}
+        maven { url "https://maven.google.com"}
+        maven { url "https://dl.google.com/dl/android/maven2/"}
     }
 
 }

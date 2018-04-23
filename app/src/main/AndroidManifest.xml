@@ -162,7 +162,10 @@
         <activity
             android:name=".themeswitch.ThemeSwitchActivity"
             android:theme="@style/Base.Theme.AppCompat" />
-        <activity android:name=".mvpDemo.MVPLoginActivity"></activity>
+        <activity android:name=".mvpDemo.MVPLoginActivity" />
+        <activity android:name=".placeholderview.PlaceholderViewActivityList" />
+        <activity android:name=".placeholderview.ExpendPlaceHoldViewActivity" />
+        <activity android:name=".placeholderview.SwipePlaceHolderViewLikeTanTan"></activity>
     </application>
 
 </manifest>
