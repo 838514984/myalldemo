@@ -186,6 +186,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         switch (position) {
             case 0:
                 startActivity(new Intent(this, RelativeLayoutpadding30dp.class));
+                //mSwipeBackHelper.forward(RelativeLayoutpadding30dp.class);
                 break;
             case 1:
                 startActivity(new Intent(this, TestStatusBar.class));

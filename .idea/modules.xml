@@ -2,14 +2,22 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/2.iml" filepath="$PROJECT_DIR$/2.iml" />
+      <module fileurl="file://D:\mgit\myalldemo\myalldemo\2.iml" filepath="D:\mgit\myalldemo\myalldemo\2.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\mgit\myalldemo\myalldemo\app\app.iml" filepath="D:\mgit\myalldemo\myalldemo\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/javatest/javatest.iml" filepath="$PROJECT_DIR$/javatest/javatest.iml" />
+      <module fileurl="file://D:\mgit\myalldemo\myalldemo\javatest\javatest.iml" filepath="D:\mgit\myalldemo\myalldemo\javatest\javatest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myalldemo.iml" filepath="$PROJECT_DIR$/myalldemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/mylibrary/mylibrary.iml" filepath="$PROJECT_DIR$/mylibrary/mylibrary.iml" />
+      <module fileurl="file://D:\mgit\myalldemo\myalldemo\mylibrary\mylibrary.iml" filepath="D:\mgit\myalldemo\myalldemo\mylibrary\mylibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/mysublib/mysublib.iml" filepath="$PROJECT_DIR$/mysublib/mysublib.iml" />
+      <module fileurl="file://D:\mgit\myalldemo\myalldemo\mysublib\mysublib.iml" filepath="D:\mgit\myalldemo\myalldemo\mysublib\mysublib.iml" />
       <module fileurl="file://$PROJECT_DIR$/mythirdlib/mythirdlib.iml" filepath="$PROJECT_DIR$/mythirdlib/mythirdlib.iml" />
+      <module fileurl="file://D:\mgit\myalldemo\myalldemo\mythirdlib\mythirdlib.iml" filepath="D:\mgit\myalldemo\myalldemo\mythirdlib\mythirdlib.iml" />
       <module fileurl="file://$PROJECT_DIR$/rxjava1learning/rxjava1learning.iml" filepath="$PROJECT_DIR$/rxjava1learning/rxjava1learning.iml" />
+      <module fileurl="file://D:\mgit\myalldemo\myalldemo\rxjava1learning\rxjava1learning.iml" filepath="D:\mgit\myalldemo\myalldemo\rxjava1learning\rxjava1learning.iml" />
       <module fileurl="file://$PROJECT_DIR$/secretbaselibrary/secretbaselibrary.iml" filepath="$PROJECT_DIR$/secretbaselibrary/secretbaselibrary.iml" />
+      <module fileurl="file://D:\mgit\myalldemo\myalldemo\secretbaselibrary\secretbaselibrary.iml" filepath="D:\mgit\myalldemo\myalldemo\secretbaselibrary\secretbaselibrary.iml" />
     </modules>
   </component>
 </project>

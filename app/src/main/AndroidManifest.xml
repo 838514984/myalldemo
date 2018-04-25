@@ -46,7 +46,7 @@
         <activity android:name=".testRelativeoutPaddingValueable.FrameLayoutContainerpadding30dp" />
         <activity
             android:name=".testRelativeoutPaddingValueable.RelativeLayoutpadding30dp"
-            android:process=":remote" />
+            />
         <activity android:name=".testStatusBar.TestStatusBar" />
         <activity android:name=".rxbinding.RxBinDingActivity" />
         <activity android:name=".rxJava.TestRxJavaActivity" />

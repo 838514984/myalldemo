@@ -10,6 +10,7 @@ import com.example.administrator.mytestallhere.dagger.compent.DaggerApplicationC
 import com.example.administrator.mytestallhere.dagger.module.ApplicationModule;
 import com.example.administrator.mytestallhere.dataProvider.ExpendPlaceViewHolderDataProvider;
 import com.example.administrator.mytestallhere.util.Logger;
+import com.example.swipeback.BGASwipeBackHelper;
 
 
 import java.util.ArrayList;
@@ -39,6 +40,13 @@ public class MyApplication extends Application {
         compent = DaggerApplicationCompent.builder().applicationModule(new ApplicationModule(this)).build();
         compent.inject(this);
         Logger.error("Thread name: " + Thread.currentThread().getName() + " ,pid: " + Process.myPid());
+        BGASwipeBackHelper.init(this,null);
+
+
+
+
+
+
 //        if (LeakCanary.isInAnalyzerProcess(this))
 //            return;
         // LeakCanary.install(this);

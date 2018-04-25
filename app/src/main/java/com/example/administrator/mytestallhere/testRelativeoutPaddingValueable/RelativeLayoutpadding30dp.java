@@ -2,6 +2,8 @@ package com.example.administrator.mytestallhere.testRelativeoutPaddingValueable;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
+import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.example.administrator.mytestallhere.BaseActivity;
@@ -20,6 +22,12 @@ public class RelativeLayoutpadding30dp extends BaseActivity {
                 startActivity(new Intent(RelativeLayoutpadding30dp.this,FrameLayoutContainerpadding30dp.class));
             }
         });
+
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
+        super.onCreate(savedInstanceState, persistentState);
     }
 
     @Override

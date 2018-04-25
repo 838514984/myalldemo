@@ -55,7 +55,7 @@ public class SwipePlaceHolderViewLikeTanTan extends AppCompatActivity {
         swipePlaceHolderView.getBuilder()
                 .setSwipeVerticalThreshold(100)
                 .setSwipeHorizontalThreshold(100)
-                .setDisplayViewCount(5)
+                .setDisplayViewCount(3)
                 .setSwipeDecor(new SwipeDecor()
                         .setPaddingTop(20)
                         .setRelativeScale(0.01f)/*这个挺重要*/

@@ -9,6 +9,7 @@ import android.view.Window;
 
 import com.example.administrator.mytestallhere.mvpDemo.present.BasePresent;
 import com.example.administrator.mytestallhere.statusutil.StatusBarUtil;
+import com.example.swipeback.BGASwipeBackHelper;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -17,19 +18,21 @@ import butterknife.ButterKnife;
  * Created by Administrator on 2017/8/24 0024.
  */
 
-public abstract class BaseActivity<T extends BasePresent> extends AppCompatActivity {
+public abstract class BaseActivity<T extends BasePresent> extends AppCompatActivity implements BGASwipeBackHelper.Delegate {
     public T mPresent;
     View rootView;
     @Nullable
     @BindView(R.id.immersiveView)
     View immersiveView;
     ViewGroup mRootView;
+    protected BGASwipeBackHelper mSwipeBackHelper;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        mSwipeBackHelper = new BGASwipeBackHelper(this,this);
+        //getWindow().requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS);
         super.onCreate(savedInstanceState);
         MyApplication.ACTIVITYS.add(this);
-        getWindow().requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS);
         StatusBarUtil.immersive(this);
         setContentView(getLayoutId());
         mRootView = (ViewGroup) findViewById(android.R.id.content);
@@ -64,5 +67,34 @@ public abstract class BaseActivity<T extends BasePresent> extends AppCompatActiv
     protected void onDestroy() {
         super.onDestroy();
         MyApplication.ACTIVITYS.remove(this);
+    }
+
+    @Override
+    public boolean isSupportSwipeBack() {
+        return true;
+    }
+
+    @Override
+    public void onSwipeBackLayoutSlide(float slideOffset) {
+
+    }
+
+    @Override
+    public void onSwipeBackLayoutCancel() {
+
+    }
+
+    @Override
+    public void onSwipeBackLayoutExecuted() {
+        mSwipeBackHelper.backward();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (mSwipeBackHelper.isSliding()){
+            return;
+        }
+        mSwipeBackHelper.backward();
+
     }
 }
