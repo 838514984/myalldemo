@@ -44,9 +44,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".testRelativeoutPaddingValueable.FrameLayoutContainerpadding30dp" />
-        <activity
-            android:name=".testRelativeoutPaddingValueable.RelativeLayoutpadding30dp"
-            />
+        <activity android:name=".testRelativeoutPaddingValueable.RelativeLayoutpadding30dp" />
         <activity android:name=".testStatusBar.TestStatusBar" />
         <activity android:name=".rxbinding.RxBinDingActivity" />
         <activity android:name=".rxJava.TestRxJavaActivity" />
@@ -165,7 +163,8 @@
         <activity android:name=".mvpDemo.MVPLoginActivity" />
         <activity android:name=".placeholderview.PlaceholderViewActivityList" />
         <activity android:name=".placeholderview.ExpendPlaceHoldViewActivity" />
-        <activity android:name=".placeholderview.SwipePlaceHolderViewLikeTanTan"></activity>
+        <activity android:name=".placeholderview.SwipePlaceHolderViewLikeTanTan" />
+        <activity android:name=".fillsystem.FillSystemActivity"></activity>
     </application>
 
 </manifest>

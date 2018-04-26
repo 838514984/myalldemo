@@ -199,7 +199,6 @@ dependencies {
     //Dagger
 
     //recyclerview
-    
 
 //    compile 'com.squareup:javapoet:1.10.0'
 //    compile 'com.mindorks.android:placeholderview:1.0.2'
