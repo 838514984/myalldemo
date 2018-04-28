@@ -15,10 +15,7 @@ import android.view.View;
 
 import com.example.administrator.mytestallhere.R;
 import com.example.administrator.mytestallhere.bean.User;
-import com.example.administrator.mytestallhere.util.Logger;
-
-import java.security.MessageDigestSpi;
-import java.util.List;
+import com.example.util.Logger;
 
 public class MessengeActivity extends AppCompatActivity implements View.OnClickListener {
     Messenger serviceMessenge;

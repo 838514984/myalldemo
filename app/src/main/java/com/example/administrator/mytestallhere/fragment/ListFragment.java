@@ -16,7 +16,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.administrator.mytestallhere.R;
-import com.example.administrator.mytestallhere.util.Logger;
+import com.example.util.Logger;
 
 import java.util.ArrayList;
 

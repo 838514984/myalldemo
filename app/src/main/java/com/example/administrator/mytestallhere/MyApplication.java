@@ -3,24 +3,19 @@ package com.example.administrator.mytestallhere;
 import android.app.Activity;
 import android.app.Application;
 import android.os.Process;
-import android.widget.Toast;
 
 import com.example.administrator.mytestallhere.dagger.compent.ApplicationCompent;
 import com.example.administrator.mytestallhere.dagger.compent.DaggerApplicationCompent;
 import com.example.administrator.mytestallhere.dagger.module.ApplicationModule;
 import com.example.administrator.mytestallhere.dataProvider.ExpendPlaceViewHolderDataProvider;
-import com.example.administrator.mytestallhere.util.Logger;
+import com.example.util.Logger;
 import com.example.swipeback.BGASwipeBackHelper;
+import com.mob.MobSDK;
 
 
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
-
-import io.reactivex.Observable;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.functions.Consumer;
 
 /**
  * Created by Administrator on 2017/8/29 0029.
@@ -41,7 +36,6 @@ public class MyApplication extends Application {
         compent.inject(this);
         Logger.error("Thread name: " + Thread.currentThread().getName() + " ,pid: " + Process.myPid());
         BGASwipeBackHelper.init(this,null);
-
 
 
 

@@ -25,6 +25,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        tools:replace="android:name"
         tools:node="merge">
         <activity
             android:name=".MainActivity"
@@ -165,8 +166,9 @@
         <activity android:name=".placeholderview.ExpendPlaceHoldViewActivity" />
         <activity android:name=".placeholderview.SwipePlaceHolderViewLikeTanTan" />
         <activity android:name=".fillsystem.FillSystemActivity" />
-        <activity android:name=".learn.custom.CustomViewLearningActivity"></activity>
-        <activity android:name=".learn.LearningListActivity"/>
+        <activity android:name=".learn.custom.CustomViewLearningActivity" />
+        <activity android:name=".learn.LearningListActivity" />
+        <activity android:name=".smsVerfiry.SmsVerfiryActivity"></activity>
     </application>
 
 </manifest>

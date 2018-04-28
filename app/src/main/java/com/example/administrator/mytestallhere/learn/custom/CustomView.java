@@ -5,7 +5,7 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.example.administrator.mytestallhere.util.Logger;
+import com.example.util.Logger;
 
 /**
  * Created by Administrator on 2018/4/26 0026.

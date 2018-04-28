@@ -27,7 +27,7 @@ import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
 import com.example.administrator.mytestallhere.R;
 import com.example.administrator.mytestallhere.glide.transform.BlurTransformation;
-import com.example.administrator.mytestallhere.util.Logger;
+import com.example.util.Logger;
 
 /**
  * Created by Administrator on 2018/4/2 0002.

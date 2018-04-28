@@ -1,4 +1,4 @@
-package com.example.administrator.mytestallhere.util;
+package com.example.util;
 
 import android.Manifest;
 import android.app.Activity;

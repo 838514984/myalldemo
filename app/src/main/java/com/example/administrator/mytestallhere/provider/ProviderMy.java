@@ -10,7 +10,7 @@ import android.os.Process;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import com.example.administrator.mytestallhere.util.Logger;
+import com.example.util.Logger;
 
 /**
  * Created by Administrator on 2018/2/25 0025.

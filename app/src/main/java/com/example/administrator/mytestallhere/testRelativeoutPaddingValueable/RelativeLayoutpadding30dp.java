@@ -8,7 +8,7 @@ import android.view.View;
 
 import com.example.administrator.mytestallhere.BaseActivity;
 import com.example.administrator.mytestallhere.R;
-import com.example.administrator.mytestallhere.util.Logger;
+import com.example.util.Logger;
 
 public class RelativeLayoutpadding30dp extends BaseActivity {
 

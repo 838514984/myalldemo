@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.mytestallhere.smsVerfiry.SmsVerfiryActivity">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_100"
+        android:hint="phonenumber">
+
+        <EditText
+            android:id="@+id/ed_sms_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_100"
+        android:hint="verity code">
+
+        <EditText
+            android:id="@+id/ed_sms_verity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_sms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="get verity code" />
+
+    <Button
+        android:id="@+id/btn_verity_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="verity" />
+</LinearLayout>

@@ -13,7 +13,7 @@ import android.support.v4.content.FileProvider;
 
 import com.example.administrator.mytestallhere.BaseActivity;
 import com.example.administrator.mytestallhere.R;
-import com.example.administrator.mytestallhere.util.Logger;
+import com.example.util.Logger;
 
 import org.greenrobot.eventbus.EventBus;
 

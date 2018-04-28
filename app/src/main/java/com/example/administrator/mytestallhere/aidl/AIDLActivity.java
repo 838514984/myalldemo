@@ -13,9 +13,8 @@ import android.view.View;
 import com.example.administrator.mytestallhere.R;
 import com.example.administrator.mytestallhere.UserManager;
 import com.example.administrator.mytestallhere.bean.User;
-import com.example.administrator.mytestallhere.util.Logger;
+import com.example.util.Logger;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class AIDLActivity extends AppCompatActivity implements View.OnClickListener {

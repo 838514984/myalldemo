@@ -1,11 +1,9 @@
 package com.example.administrator.mytestallhere.startActivityFromBrowseTest;
 
-import android.Manifest;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Environment;
 import android.support.v4.content.FileProvider;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ViewGroup;
 import android.webkit.WebView;
@@ -13,16 +11,12 @@ import android.widget.TextView;
 
 import com.example.administrator.mytestallhere.BaseActivity;
 import com.example.administrator.mytestallhere.R;
-import com.example.administrator.mytestallhere.util.GetAssetsFiles;
-import com.example.administrator.mytestallhere.util.Logger;
-import com.tbruyelle.rxpermissions2.RxPermissions;
+import com.example.util.GetAssetsFiles;
 
 import java.io.File;
-import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import io.reactivex.functions.Consumer;
 
 public class StartActivityFromBrowse extends BaseActivity {
     @BindView(R.id.tv)

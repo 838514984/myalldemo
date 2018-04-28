@@ -2,6 +2,17 @@ apply plugin: 'com.android.application'
 apply plugin: 'maven'
 apply from: rootProject.getRootDir().getAbsolutePath() + '/myUtil.gradle'
 apply plugin: 'com.getkeepsafe.dexcount'
+// 添加插件 sms
+apply plugin: "com.mob.sdk"
+// 在MobSDK的扩展中注册SMSSDK的相关信息
+MobSDK {
+    appKey "257da576dc634"
+    appSecret "f5efe412037e3f0553d13b902b378379"
+
+    SMSSDK {
+        gui false
+    }
+}
 getAndroidVersion()
 println utilName
 
@@ -115,19 +126,19 @@ android {
 
     }
     sourceSets {
-        //maybe only the 'main' script block is workful
+        //maybe only the 'getVerityCode' script block is workful
 //        myrayDebug{
-//            java.srcDirs=['main/java','mybase/java']
+//            java.srcDirs=['getVerityCode/java','mybase/java']
 //        }
         myray {
-            java.srcDirs = ['src/main/java', 'src/mybase/java']
+            java.srcDirs = ['src/getVerityCode/java', 'src/mybase/java']
             assets.srcDirs = ['assets']
-//!!!!! not like follows : main/java....mybase/java.....
+//!!!!! not like follows : getVerityCode/java....mybase/java.....
         }
         treasure {
             assets.srcDirs = ['assets']
-            java.srcDirs = ['src/main/java', 'src/treasure/java']
-//!!!!! not like follows : main/java....mybase/java.....
+            java.srcDirs = ['src/getVerityCode/java', 'src/treasure/java']
+//!!!!! not like follows : getVerityCode/java....mybase/java.....
         }
     }
     //Use the following properties to improve the build times when Gradle compiles your code into DEX files.
@@ -256,7 +267,7 @@ sourceSets.all {
 
 sourceSets {
     main {
-        purpose = 'main'
+        purpose = 'getVerityCode'
     }
     test {
         purpose = 'test'

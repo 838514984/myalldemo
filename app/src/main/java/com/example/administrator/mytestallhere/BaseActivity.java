@@ -19,12 +19,13 @@ import butterknife.ButterKnife;
  */
 
 public abstract class BaseActivity<T extends BasePresent> extends AppCompatActivity implements BGASwipeBackHelper.Delegate {
+    public BaseActivity(){}
     public T mPresent;
     View rootView;
     @Nullable
     @BindView(R.id.immersiveView)
     View immersiveView;
-    ViewGroup mRootView;
+    protected ViewGroup mRootView;
     protected BGASwipeBackHelper mSwipeBackHelper;
 
     @Override

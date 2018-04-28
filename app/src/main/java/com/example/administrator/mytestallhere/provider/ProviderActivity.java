@@ -1,7 +1,6 @@
 package com.example.administrator.mytestallhere.provider;
 
 import android.content.ContentValues;
-import android.database.ContentObserver;
 import android.database.Cursor;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
@@ -11,7 +10,7 @@ import android.view.View;
 import com.example.administrator.mytestallhere.R;
 import com.example.administrator.mytestallhere.bean.Book;
 import com.example.administrator.mytestallhere.bean.User;
-import com.example.administrator.mytestallhere.util.Logger;
+import com.example.util.Logger;
 
 public class ProviderActivity extends AppCompatActivity implements View.OnClickListener {
     Uri uriProvider=Uri.parse("content://cn.leslielee.provider");

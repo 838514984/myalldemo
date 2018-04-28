@@ -3,13 +3,12 @@ package com.example.administrator.mytestallhere.view;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.support.annotation.Nullable;
-import android.support.annotation.Px;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Scroller;
 
-import com.example.administrator.mytestallhere.util.Logger;
+import com.example.util.Logger;
 
 /**
  * Created by Administrator on 2018/2/25 0025.

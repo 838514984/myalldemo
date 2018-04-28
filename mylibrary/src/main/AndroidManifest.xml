@@ -4,10 +4,10 @@
 
     <application
         android:allowBackup="true"
-        android:label="@string/app_name"
-        android:supportsRtl="true"
         android:icon="@drawable/lb_ic_thumb_up"
-        >
+        android:label="@string/app_name"
+        android:name="com.example.MyApplication"
+        android:supportsRtl="true">
         <activity android:name="com.example.administrator.mytestallhere.testDependences.MylibraryMainActivity" />
     </application>
 

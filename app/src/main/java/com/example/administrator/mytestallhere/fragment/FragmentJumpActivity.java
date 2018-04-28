@@ -1,8 +1,6 @@
 package com.example.administrator.mytestallhere.fragment;
 
 import android.os.Build;
-import android.renderscript.ScriptIntrinsicBlur;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -11,7 +9,7 @@ import android.transition.TransitionInflater;
 import android.view.View;
 
 import com.example.administrator.mytestallhere.R;
-import com.example.administrator.mytestallhere.util.Logger;
+import com.example.util.Logger;
 
 public class FragmentJumpActivity extends AppCompatActivity implements View.OnClickListener, ListFragment.OnItemClickListener {
     FragmentManager fragmentManager;

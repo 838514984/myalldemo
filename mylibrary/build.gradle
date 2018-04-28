@@ -1,4 +1,17 @@
 apply plugin: 'com.android.library'
+
+// 添加插件 sms
+apply plugin: "com.mob.sdk"
+// 在MobSDK的扩展中注册SMSSDK的相关信息
+MobSDK {
+    appKey "257da576dc634"
+    appSecret "f5efe412037e3f0553d13b902b378379"
+
+    SMSSDK {
+        gui false
+    }
+}
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.3"
@@ -35,7 +48,7 @@ dependencies {
     //        transitive true
     //    }
 
-    compile ('com.github.bumptech.glide:glide:4.6.1'){
+    compile('com.github.bumptech.glide:glide:4.6.1') {
         exclude group: "com.android.support"
     }
     annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
@@ -55,7 +68,8 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
     compile 'com.squareup.retrofit2:converter-jackson:2.1.0'
-    compile 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+    //compile 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
     //添加自己的依赖包 ^ ^
     compile 'com.secretbase:secretbaselibrary:1.1.3'
     compile 'com.android.support:cardview-v7:25.2.0'

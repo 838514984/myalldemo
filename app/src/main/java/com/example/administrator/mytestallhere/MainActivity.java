@@ -31,7 +31,6 @@ import com.example.administrator.mytestallhere.glideGetBitmap.GlideGetBitmapActi
 import com.example.administrator.mytestallhere.http.okhttptest.OkHttpActivity;
 import com.example.administrator.mytestallhere.http.retrofit.RetrofitRxjavaActivity;
 import com.example.administrator.mytestallhere.learn.LearningListActivity;
-import com.example.administrator.mytestallhere.learn.recyclerview.RcrviewSwipeDismissActivity;
 import com.example.administrator.mytestallhere.memoryleak.MemoryActivityTest;
 import com.example.administrator.mytestallhere.multiApksBuildTest.MuiltyApksbuildTestActivity;
 import com.example.administrator.mytestallhere.mvpDemo.MVPLoginActivity;
@@ -42,6 +41,7 @@ import com.example.administrator.mytestallhere.remoteView.CustomNotificationActi
 import com.example.administrator.mytestallhere.rxJava.TestRxJavaActivity;
 import com.example.administrator.mytestallhere.rxbinding.RxBinDingActivity;
 import com.example.administrator.mytestallhere.selectImgAndCrop.SelectImgAndCropActivity;
+import com.example.administrator.mytestallhere.smsVerfiry.SmsVerfiryActivity;
 import com.example.administrator.mytestallhere.startActivityFromBrowseTest.StartActivityFromBrowse;
 import com.example.administrator.mytestallhere.testDependences.DependencesActivity;
 import com.example.administrator.mytestallhere.testRelativeoutPaddingValueable.RelativeLayoutpadding30dp;
@@ -49,7 +49,7 @@ import com.example.administrator.mytestallhere.testStatusBar.TestStatusBar;
 import com.example.administrator.mytestallhere.testmaterial_calendarview.MaterialCalendarViewActivity;
 import com.example.administrator.mytestallhere.themeswitch.ThemeSwitchActivity;
 import com.example.administrator.mytestallhere.time_data_orotherpicker.TestPickActivity;
-import com.example.administrator.mytestallhere.util.Logger;
+import com.example.util.Logger;
 import com.example.administrator.mytestallhere.view.CircleViewActivity;
 import com.example.administrator.mytestallhere.view.ViewMoveActivity;
 import com.example.administrator.mytestallhere.viewpagerTest.ViewPagerActivity;
@@ -113,6 +113,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         add("MVPLogin test");
         add("place holder view");
         add("fillsys");
+        add("短信验证码 43");
     }};
 
     @Override
@@ -322,6 +323,9 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 break;
             case 42:
                 FillSystemActivity.startActivity(this);
+                break;
+            case 43:
+                SmsVerfiryActivity.StartActivity(this);
                 break;
         }
     }
