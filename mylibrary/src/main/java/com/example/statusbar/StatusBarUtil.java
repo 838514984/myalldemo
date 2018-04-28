@@ -21,12 +21,7 @@ import com.example.mylibrary.R;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-/**
- * Created by Jaeger on 16/2/14.
- * <p>
- * Email: chjie.jaeger@gmail.com
- * GitHub: https://github.com/laobie
- */
+
 public class StatusBarUtil {
 
     public static final int DEFAULT_STATUS_BAR_ALPHA = 112;
@@ -653,7 +648,7 @@ public class StatusBarUtil {
     /**
      * 设置透明
      */
-    private static void setTransparentForWindow(Activity activity) {
+    public static void setTransparentForWindow(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             activity.getWindow().setStatusBarColor(Color.TRANSPARENT);
             activity.getWindow()

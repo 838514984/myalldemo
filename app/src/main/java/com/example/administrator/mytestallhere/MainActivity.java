@@ -25,10 +25,12 @@ import com.example.administrator.mytestallhere.butterknife.ButterKnifeActivity;
 import com.example.administrator.mytestallhere.cameraTest.CameraPreViewTestActivity;
 import com.example.administrator.mytestallhere.customdialog.CustomDialogActivity;
 import com.example.administrator.mytestallhere.edittextKeyboardAction.EditTextKeyboaedActivity;
+import com.example.administrator.mytestallhere.fillsystem.FillSystemActivity;
 import com.example.administrator.mytestallhere.fragment.FragmentJumpActivity;
 import com.example.administrator.mytestallhere.glideGetBitmap.GlideGetBitmapActivity;
 import com.example.administrator.mytestallhere.http.okhttptest.OkHttpActivity;
 import com.example.administrator.mytestallhere.http.retrofit.RetrofitRxjavaActivity;
+import com.example.administrator.mytestallhere.learn.LearningListActivity;
 import com.example.administrator.mytestallhere.learn.recyclerview.RcrviewSwipeDismissActivity;
 import com.example.administrator.mytestallhere.memoryleak.MemoryActivityTest;
 import com.example.administrator.mytestallhere.multiApksBuildTest.MuiltyApksbuildTestActivity;
@@ -92,7 +94,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         add("WebViewVideoPlayer Test");
         add("Android&JsInvoke");
         add("CustomAnnotation");
-        add("RcrviewSwipeDismiss");
+        add("learningList");
         add("customDialogue");
         add("alarmWhenLocked");
         add("EditTextKeyBoardAction");
@@ -110,6 +112,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         add("switch theme");
         add("MVPLogin test");
         add("place holder view");
+        add("fillsys");
     }};
 
     @Override
@@ -258,7 +261,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 startActivity(new Intent(this, AnnotationActivity.class));
                 break;
             case 24:
-                startActivity(new Intent(this,RcrviewSwipeDismissActivity.class));
+                startActivity(new Intent(this,LearningListActivity.class));
                 break;
             case 25:
                 startActivity(new Intent(this, CustomDialogActivity.class));
@@ -316,6 +319,9 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 break;
             case 41:
                 startActivity(new Intent(this, PlaceholderViewActivityList.class));
+                break;
+            case 42:
+                FillSystemActivity.startActivity(this);
                 break;
         }
     }

@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.example.administrator.mytestallhere.R;
 import com.example.administrator.mytestallhere.rxJava.TestRxJavaActivity;
-import com.example.administrator.mytestallhere.statusutil.StatusBarUtil;
 
 import javax.crypto.spec.RC2ParameterSpec;
 
@@ -33,7 +32,6 @@ public class TestFragment extends Fragment {
         if(view==null){
             view=inflater.inflate(R.layout.layout_my_topbar,container,false);
             butterknife.ButterKnife.bind(this,view);
-            StatusBarUtil.setPaddingSmart(getContext(),view);
         }
         return view;
     }

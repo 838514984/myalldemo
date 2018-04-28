@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 
 import com.example.administrator.mytestallhere.mvpDemo.present.BasePresent;
-import com.example.administrator.mytestallhere.statusutil.StatusBarUtil;
+import com.example.statusbar.StatusBarUtil;
 import com.example.swipeback.BGASwipeBackHelper;
 
 import butterknife.BindView;
@@ -29,18 +29,16 @@ public abstract class BaseActivity<T extends BasePresent> extends AppCompatActiv
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        mSwipeBackHelper = new BGASwipeBackHelper(this,this);
+        if (needUseSwipeBackLayout())
+            mSwipeBackHelper = new BGASwipeBackHelper(this, this);
         //getWindow().requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS);
         super.onCreate(savedInstanceState);
         MyApplication.ACTIVITYS.add(this);
-        StatusBarUtil.immersive(this);
         setContentView(getLayoutId());
+        setStatusBarAction();
         mRootView = (ViewGroup) findViewById(android.R.id.content);
-        StatusBarUtil.setPaddingSmart(this,mRootView.getChildAt(0));
         mPresent = initPresent();
         ButterKnife.bind(this);
-        if (immersiveView != null)
-            StatusBarUtil.setPaddingSmart(this, immersiveView);
     }
 
     @Override
@@ -57,16 +55,22 @@ public abstract class BaseActivity<T extends BasePresent> extends AppCompatActiv
 
     }
 
-    protected  abstract int getLayoutId();
+    protected abstract int getLayoutId();
 
-    protected  T initPresent(){
+    protected T initPresent() {
         return null;
-    };
+    }
+
+    ;
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         MyApplication.ACTIVITYS.remove(this);
+    }
+
+    protected boolean needUseSwipeBackLayout() {
+        return true;
     }
 
     @Override
@@ -89,12 +93,23 @@ public abstract class BaseActivity<T extends BasePresent> extends AppCompatActiv
         mSwipeBackHelper.backward();
     }
 
+    protected void setStatusBarAction() {
+        StatusBarUtil.setTranslucent(this, 0);
+    }
+
     @Override
     public void onBackPressed() {
-        if (mSwipeBackHelper.isSliding()){
-            return;
+        if (needUseSwipeBackLayout()){
+            if (mSwipeBackHelper.isSliding()) {
+                return;
+            }
+            mSwipeBackHelper.backward();
+        }else{
+            super.onBackPressed();
         }
-        mSwipeBackHelper.backward();
+
 
     }
+
+
 }
