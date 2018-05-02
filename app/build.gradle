@@ -54,7 +54,11 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-        multiDexEnabled false
+        multiDexEnabled true
+
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+        }
 
     }
     signingConfigs {
@@ -125,7 +129,13 @@ android {
     variantFilter {
 
     }
+    sourceSets{
+        main.res.srcDirs += ['src/main/res','src/main/res_tbs']
+    }
+
+
     sourceSets {
+
         //maybe only the 'getVerityCode' script block is workful
 //        myrayDebug{
 //            java.srcDirs=['getVerityCode/java','mybase/java']
@@ -133,9 +143,14 @@ android {
         myray {
             java.srcDirs = ['src/getVerityCode/java', 'src/mybase/java']
             assets.srcDirs = ['assets']
+            //so文件
+            jniLibs.srcDir(['libs'])
+
+
 //!!!!! not like follows : getVerityCode/java....mybase/java.....
         }
         treasure {
+            jniLibs.srcDir(['libs'])
             assets.srcDirs = ['assets']
             java.srcDirs = ['src/getVerityCode/java', 'src/treasure/java']
 //!!!!! not like follows : getVerityCode/java....mybase/java.....
@@ -206,16 +221,13 @@ dependencies {
     // debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.2'
     //myrayDebugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.2'
     //releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.2'
-
     //Dagger
-
     //recyclerview
-
-//    compile 'com.squareup:javapoet:1.10.0'
-//    compile 'com.mindorks.android:placeholderview:1.0.2'
-//    annotationProcessor ('com.mindorks.android:placeholderview-compiler:1.0.2'){
-//        exclude group: 'com.squareup:javapoet'
-//    }
+    //    compile 'com.squareup:javapoet:1.10.0'
+    //    compile 'com.mindorks.android:placeholderview:1.0.2'
+    //    annotationProcessor ('com.mindorks.android:placeholderview-compiler:1.0.2'){
+    //        exclude group: 'com.squareup:javapoet'
+    //    }
     compile 'com.jakewharton:butterknife:8.8.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.google.dagger:dagger:2.4'
@@ -224,6 +236,7 @@ dependencies {
     compile 'com.mindorks:placeholderview:0.7.3'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.0'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.4'
+    compile files('libs/tbs_sdk_thirdapp_v3.1.0.1034_43100_sharewithdownload_obfs_20170301_182143.jar')
 }
 
 

@@ -169,6 +169,13 @@
         <activity android:name=".learn.custom.CustomViewLearningActivity" />
         <activity android:name=".learn.LearningListActivity" />
         <activity android:name=".smsVerfiry.SmsVerfiryActivity"></activity>
+
+        <!--腾讯tbs浏览器-->
+        <activity android:name=".tbs.BrowserActivity"/>
+        <activity android:name=".tbs.FilechooserActivity"/>
+        <activity android:name=".tbs.FullScreenActivity"/>
+        <activity android:name=".tbs.TabMainActivity"/>
+
     </application>
 
 </manifest>

@@ -43,6 +43,7 @@ import com.example.administrator.mytestallhere.rxbinding.RxBinDingActivity;
 import com.example.administrator.mytestallhere.selectImgAndCrop.SelectImgAndCropActivity;
 import com.example.administrator.mytestallhere.smsVerfiry.SmsVerfiryActivity;
 import com.example.administrator.mytestallhere.startActivityFromBrowseTest.StartActivityFromBrowse;
+import com.example.administrator.mytestallhere.tbs.BrowserActivity;
 import com.example.administrator.mytestallhere.testDependences.DependencesActivity;
 import com.example.administrator.mytestallhere.testRelativeoutPaddingValueable.RelativeLayoutpadding30dp;
 import com.example.administrator.mytestallhere.testStatusBar.TestStatusBar;
@@ -114,6 +115,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         add("place holder view");
         add("fillsys");
         add("短信验证码 43");
+        add("tbs x5 44");
     }};
 
     @Override
@@ -327,6 +329,8 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
             case 43:
                 SmsVerfiryActivity.StartActivity(this);
                 break;
+            case 44:
+                BrowserActivity.startActivity(this);
         }
     }
 
