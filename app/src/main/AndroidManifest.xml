@@ -25,8 +25,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:replace="android:name"
-        tools:node="merge">
+        tools:node="merge"
+        tools:replace="android:name">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTask">
@@ -168,14 +168,14 @@
         <activity android:name=".fillsystem.FillSystemActivity" />
         <activity android:name=".learn.custom.CustomViewLearningActivity" />
         <activity android:name=".learn.LearningListActivity" />
-        <activity android:name=".smsVerfiry.SmsVerfiryActivity"></activity>
+        <activity android:name=".smsVerfiry.SmsVerfiryActivity" />
 
-        <!--腾讯tbs浏览器-->
-        <activity android:name=".tbs.BrowserActivity"/>
-        <activity android:name=".tbs.FilechooserActivity"/>
-        <activity android:name=".tbs.FullScreenActivity"/>
-        <activity android:name=".tbs.TabMainActivity"/>
-
+        <!-- 腾讯tbs浏览器 -->
+        <activity android:name=".tbs.BrowserActivity" />
+        <activity android:name=".tbs.FilechooserActivity" />
+        <activity android:name=".tbs.FullScreenActivity" />
+        <activity android:name=".tbs.TabMainActivity" />
+        <activity android:name=".tbs.TbslistActivity"></activity>
     </application>
 
 </manifest>

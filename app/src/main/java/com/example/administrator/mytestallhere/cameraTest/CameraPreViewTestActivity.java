@@ -1,13 +1,8 @@
 package com.example.administrator.mytestallhere.cameraTest;
 
 import android.Manifest;
-import android.graphics.Canvas;
-import android.graphics.Rect;
 import android.hardware.Camera;
-import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
@@ -50,6 +45,7 @@ public class CameraPreViewTestActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        //这一步延迟非常重要
         Observable.timer(1, TimeUnit.SECONDS).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<Long>() {
             @Override
             public void accept(Long aLong) throws Exception {

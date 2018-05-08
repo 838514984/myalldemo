@@ -44,6 +44,7 @@ import com.example.administrator.mytestallhere.selectImgAndCrop.SelectImgAndCrop
 import com.example.administrator.mytestallhere.smsVerfiry.SmsVerfiryActivity;
 import com.example.administrator.mytestallhere.startActivityFromBrowseTest.StartActivityFromBrowse;
 import com.example.administrator.mytestallhere.tbs.BrowserActivity;
+import com.example.administrator.mytestallhere.tbs.TbslistActivity;
 import com.example.administrator.mytestallhere.testDependences.DependencesActivity;
 import com.example.administrator.mytestallhere.testRelativeoutPaddingValueable.RelativeLayoutpadding30dp;
 import com.example.administrator.mytestallhere.testStatusBar.TestStatusBar;
@@ -330,7 +331,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 SmsVerfiryActivity.StartActivity(this);
                 break;
             case 44:
-                BrowserActivity.startActivity(this);
+                TbslistActivity.startActivity(this);
         }
     }
 

@@ -71,7 +71,7 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             buildConfigField("String", "MyBuild", "\"release buildConfigFields\"")
             resValue "string", "buildTime", "0"
@@ -129,8 +129,8 @@ android {
     variantFilter {
 
     }
-    sourceSets{
-        main.res.srcDirs += ['src/main/res','src/main/res_tbs']
+    sourceSets {
+        main.res.srcDirs += ['src/main/res', 'src/main/res_tbs']
     }
 
 
@@ -145,7 +145,6 @@ android {
             assets.srcDirs = ['assets']
             //so文件
             jniLibs.srcDir(['libs'])
-
 
 //!!!!! not like follows : getVerityCode/java....mybase/java.....
         }
@@ -228,15 +227,15 @@ dependencies {
     //    annotationProcessor ('com.mindorks.android:placeholderview-compiler:1.0.2'){
     //        exclude group: 'com.squareup:javapoet'
     //    }
+    //placeholdview
+    compile files('libs/tbs_sdk_thirdapp_v3.1.0.1034_43100_sharewithdownload_obfs_20170301_182143.jar')
     compile 'com.jakewharton:butterknife:8.8.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.google.dagger:dagger:2.4'
     compile 'com.android.support:recyclerview-v7:25.4.0'
-    //placeholdview
     compile 'com.mindorks:placeholderview:0.7.3'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.0'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.4'
-    compile files('libs/tbs_sdk_thirdapp_v3.1.0.1034_43100_sharewithdownload_obfs_20170301_182143.jar')
 }
 
 
